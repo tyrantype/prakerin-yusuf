@@ -3,7 +3,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
-/* Global CSS */
 html, body  {
     background-color: rgb(250, 250, 250);
     /* background-image: linear-gradient(to top, #F1D981, rgb(248, 234, 161), rgb(248, 234, 161)) ; */
