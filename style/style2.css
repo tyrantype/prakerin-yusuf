@@ -1,0 +1,117 @@
+html{
+    /* background: linear-gradient(to left, #F1D95C, rgb(248, 234, 161), rgb(248, 234, 161)) ; */
+    background-image: image-set("style/logo_10nopember.png");
+}
+.login {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 440px;
+    margin: 7em auto;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+img{
+    padding-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
+.sign {
+    color: rgb(148, 131, 48);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+form.form1 {
+    padding-top: 40px;
+}
+
+.pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02); 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+input[type=submit] {
+    cursor: pointer;
+    border-radius: 4px;
+    color: rgb(22, 22, 22);
+    background: linear-gradient(to right, #F1D95C, #F1D95C, rgb(248, 234, 161)) ;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+input[type=submit]:hover {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    background: rgb(248, 234, 161) ;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 20px;
+        width: 60%;
+    }
+}

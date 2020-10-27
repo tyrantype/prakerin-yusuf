@@ -1,0 +1,382 @@
+* 
+  {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+/* Global CSS */
+html, body  {
+    background-color: rgb(250, 250, 250);
+    /* background-image: linear-gradient(to top, #F1D981, rgb(248, 234, 161), rgb(248, 234, 161)) ; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    height: 100%;
+    /* overflow-x: hidden; */
+}
+button {
+  text-decoration: none;
+}
+h2 {
+    margin-left: 70px ;
+    /* border-bottom: 2px solid rgb(21, 49, 73); */
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+a:hover{  
+    color: rgb(88, 88, 88);
+    cursor: pointer;
+}
+::placeholder{
+    opacity: 0.3;
+}
+
+.pagination{
+    padding-top: 10px;
+    width: 80%;
+}
+.pagination span{
+    color: rgb(36, 138, 36);
+    margin: 20px;
+    font-weight: bold;
+}
+.pagination span a{
+    color: #929292;
+    font-weight: normal;
+}
+.pagination span a:hover{
+    color: rgb(36, 138, 36);
+    border-bottom: 1px;
+}
+
+
+/* DivTable 
+-----------------------------------*/
+.divTable{
+    display: table;
+    max-width: 1400px;
+    min-width: 400px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    display:inline-block;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: rgb(238, 238, 238);
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 15px 20px;
+}
+.divTableCell {
+    border-top: 0.5px solid #999999;
+}
+.divTableHead {
+	background-color: #EEE;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+
+
+
+
+/* Navbar 
+----------------*/
+#logout{
+    color: rgb(255, 62, 62);
+}
+#hapus:hover, #logout:hover {
+    color:red;
+}
+
+#navbar{
+    padding-left: 60px;
+}
+.navbar {
+    overflow: hidden;
+    z-index: 999;
+    background-color: rgb(248, 234, 161) ;
+    box-shadow:0px 5px 13px 0.5px grey;
+}
+.navbar a{
+    float: left;
+    font-size: 17px;
+    text-align: center;
+    padding: 14px 16px;
+}
+.navbar a.active{
+    color: rgb(14, 14, 14);
+    border-bottom: 3px solid rgb(21, 49, 73);
+}
+#kontainer-konten{
+    /* position: relative; */
+    display: flex;
+    width: 100%;
+    padding: 50px;
+    padding-bottom: 100px;
+    justify-content: center;
+    min-height: 70%;
+    margin-bottom: -350px;
+    /* background-color: rgba(248, 234, 161, 0.342) ; */
+}
+#konten{
+    justify-content: center;
+}
+
+.lunas{
+    color: rgb(36, 138, 36);
+    font-weight: bold;
+}
+
+
+
+/* tombol 
+---------------------------------------------- */
+.tombolbiru {
+    background-color: rgb(26, 141, 248);
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+.tombolbiru:hover {
+    background-color: rgb(20, 121, 216);
+    color: white;
+    cursor: pointer;
+}
+
+.hapus{
+    /* background-color:rgb(236, 56, 56); */
+    padding: 10px 15px;
+    border-bottom: 0.5px solid rgb(236, 56, 56);;
+    border-color: rgb(236, 56, 56);
+    border-radius: 4px;
+    color: rgb(236, 56, 56);
+}
+.hapus:hover{
+    background-color:rgb(219, 48, 48);
+    color: white;
+}
+
+.tombolhijau{
+    background-color: rgb(98, 184, 98);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+}
+.inputcari{
+    background-color: rgb(98, 184, 98);
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    color: white;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.tombolhijau:hover, .inputcari:hover{
+    background-color: rgb(37, 168, 37);
+    cursor: pointer;
+    color: white;
+}
+.tombolbiru[type=submit]{
+    font-size: 17px;
+}
+.inputsubmit {
+    font-size: 17px;
+    background-color: rgb(98, 184, 98);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inputsubmit:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 0px;
+    }
+}
+
+
+/* form tambah data dan view data 
+-------------------------------- */
+.formtambahdata {
+    width: 36%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    /* background: rgba(136, 126, 126, 0.04); */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    /* margin-bottom: 30px; */
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+}
+.kontainerform {
+    display: flex;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    /* background-color: rgb(98, 184, 98); */
+}
+
+.formcaridata {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 5px;
+    width: 400px;
+    padding-bottom: 15px;
+    /* background-color: rgb(35, 43, 35); */
+}
+/* .kontainerform, .tabellaporan {
+   bottom : 0px;
+} */
+
+.inputtext, .inputpassword, select {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.inputdate{
+    width: 150px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+select:hover{
+    cursor: pointer;
+}
+.formtransaksi{
+    width: 400px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline-block;
+    background-color: #45a0493f;
+}
+.headertahun{
+    width: 400px;
+    font-size: 20px;
+    background-color: #45a0493f;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
+/* Layout Beranda -----------------------------------*/
+#tombol-kontainer{
+    display: flex;
+    width: 100%;
+    padding: 150px;
+    margin-bottom: -350px;
+    justify-content: center;
+    position: relative;
+    background-color: rgb(248, 234, 161) ;
+}
+.tombol-master {
+    min-width: 40%; 
+    max-width: 500px; 
+    display: flex;
+    flex-flow: row wrap;
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+    /* background: grey; */
+    padding: 0;
+    margin: 10px;
+    list-style: none;
+  }
+  .tombol-master div {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 120px;
+    margin: 10px;
+    line-height: 110px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+  }
+
+
+
+/* Footer -----------------------------------*/
+.clearfooter {
+    height: 354px;
+    clear: both;
+}
+#footer{
+    position: relative;
+    bottom: 0px;
+    /* border-top-right-radius: 30% 70%;
+    background-image: linear-gradient(to right, #F1D95C, #F1D95C, rgb(248, 234, 161)) ; */
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 3vh; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    font-family: verdana;
+    height: 30px;
+}
+#footer2{
+    background-color: rgb(248, 234, 161) ;
+    box-shadow: -2px -2px 13px grey; 
+    /* padding-bottom: 3vh; */
+    /* background-color: #000200; */
+    border-top-right-radius: 50% 100%;
+    border-top-left-radius: 50% 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: verdana;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 450px;
+    color: rgb(88, 88, 88);
+}
+#footer2 img{
+    width: 37px;
+}
+  
