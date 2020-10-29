@@ -25,13 +25,12 @@ session_start();
         </style>
     </head>
 <body>
-
-        <div class="navbar" id="navbar">
-            <a href="?p=beranda">Beranda</a>
-            <a href="?p=siswa">Data Siswa</a>
-            <a href="?p=petugas">Data Petugas</a>
-            <a href="?p=spp">Data SPP</a></li>
-            <a href="?p=laporan">Laporan</a> 
-            <!-- <a href="?p=generate">Generate Data Siswa</a>  -->
-            <a id="logout" href="?p=logout">Logout</a>
-        </div>
+    <div class="navbar">
+        <a href="?p=beranda">Beranda</a>
+        <a href="?p=siswa">Data Siswa</a>
+        <a href="?p=petugas">Data Petugas</a>
+        <a href="?p=spp">Data SPP</a></li>
+        <a href="?p=laporan">Laporan</a> 
+        <!-- <a href="?p=generate">Generate Data Siswa</a>  -->
+        <a id="logout" href="?p=logout">Logout</a>
+    </div>
