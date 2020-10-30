@@ -15,76 +15,71 @@
         <div style="display: inline-block;">
             <form action="export.php" method="POST" id="convert_form">
                 <input type="hidden" name="file_content" id="file_content">
-                <input class="inputsubmit" type="submit" name="convert" id="convert" value="Convert ke Excel">
+                <button class="inputsubmit" type="submit" name="convert" id="convert" value="Convert ke Excel">Convert ke Excel</button>
             </form>
         </div>
-
-
         <br/><br/>
-        <div class="divTable" border="1" id="table_content">
-            <div class="divTableBody">
-                <div class="divTableRow">
-                    <div class="divTableHead">No.</div>
-                    <div class="divTableHead">ID Pembayaran</div>
-                    <div class="divTableHead">NISN</div>
-                    <div class="divTableHead">Nama Lengkap</div>
-                    <div class="divTableHead">Tgl. Bayar</div>
-                    <div class="divTableHead">Bulan Bayar</div>
-                    <div class="divTableHead">Tahun</div>
-                    <div class="divTableHead">Nominal</div>
-                    <div class="divTableHead">Nama Petugas</div>
-                </div>
 
+        <!-- Table menampilkan Data Transaksi -->
+        <table class="divTable" id="table_content">
+            <tr class="divTableRow">
+                <th class="divTableHead">No.</th>
+                <th class="divTableHead">ID Transaksi</th>
+                <th class="divTableHead">NISN</th>
+                <th class="divTableHead">Nama Lengkap</th>
+                <th class="divTableHead">Tgl. Bayar</th>
+                <th class="divTableHead">Bulan Bayar</th>
+                <th class="divTableHead">Tahun</th>
+                <th class="divTableHead">Nominal</th>
+                <th class="divTableHead">Nama Petugas</th>
+            </tr>
 
-                <?php
-                    if (isset($_POST['tampil'])) {
-                    $date1 = $_POST['tgl_awal'];
-                    $date2 = $_POST['tgl_akhir'];
+            <?php
+                if (isset($_POST['tampil'])) {
+                $date1 = $_POST['tgl_awal'];
+                $date2 = $_POST['tgl_akhir'];
 
-                    $data = $admin->getDataPembayaranPerPeriode($date1, $date2); // akan muncul error karena belum dibuat
+                $data = $admin->getDataPembayaranPerPeriode($date1, $date2); // akan muncul error karena belum dibuat
 
-                    $no = 1;
-                    $total = 0;
-                    foreach ($data as $r):
-                ?>
+                $no = 1;
+                $total = 0;
+                foreach ($data as $r):
+            ?>
 
-                <div class="divTableRow">
-                    <div class="divTableCell"><?= $no++ ?></div>
-                    <div class="divTableCell"><?= $r['id_pembayaran'] ?></div>
-                    <div class="divTableCell"><?= $r['nisn'] ?></div>
-                    <div class="divTableCell"><?= $r['nama_lengkap'] ?></div>
-                    <div class="divTableCell"><?= $r['tgl_bayar'] ?></div>
-                    <div class="divTableCell"><?= $r['bln_bayar'] ?></div>
-                    <div class="divTableCell"><?= $r['tahun'] ?></div>
-                    <div class="divTableCell"><?= $r['nominal'] ?></div>
-                    <div class="divTableCell"><?= $r['nama_petugas'] ?></div>
-                </div>
+            <tr class="divTableRow">
+                <td class="divTableCell"><?= $no++ ?></td>
+                <td class="divTableCell"><?= $r['id_pembayaran'] ?></td>
+                <td class="divTableCell"><?= $r['nisn'] ?></td>
+                <td class="divTableCell"><?= $r['nama_lengkap'] ?></td>
+                <td class="divTableCell"><?= $r['tgl_bayar'] ?></td>
+                <td class="divTableCell"><?= $r['bln_bayar'] ?></td>
+                <td class="divTableCell"><?= $r['tahun'] ?></td>
+                <td class="divTableCell"><?= $r['nominal'] ?></td>
+                <td class="divTableCell"><?= $r['nama_petugas'] ?></td>
+            </tr>
 
-                <?php
-                    $total += $r['nominal'];
-                    endforeach;
+            <?php
+                $total += $r['nominal'];
+                endforeach;
 
-                    } else {
-                    echo "
-                        <div>
-                        <div align=center>
-                        </div>
-                        </div>";
-                }
-                ?>
-            </div>
-        </div>
+                } else {echo "
+                    <tr >
+                        <td class='divTableHead' style='background-color: white;' colspan='10'><center>Tidak ada Data Transaksi</center>
+                        </td>
+                    </tr>";
+            }
+            ?>
+        
+        </table>
     </div>
 </div>
 
 <?php
-
     require_once 'footer.php'; 
 ?>
 
-<!-- pastikan kamu sedang online -->
-  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-  <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#convert').click(function() {

@@ -52,6 +52,9 @@ a:hover{
 
 /* DivTable 
 -----------------------------------*/
+table {
+    border-collapse: collapse;
+}
 .divTable{
     display: table;
     max-width: 1400px;
