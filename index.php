@@ -33,7 +33,7 @@
                 $_SESSION['level'] = $data['level'];
             }
         } else {
-            $_SESSION['error'] = "Username atau password tidak valid";
+            $_SESSION['error'] = "Username atau Password salah";
         }
     }
 ?>
@@ -48,11 +48,9 @@
 
     <div class="login">
         <div class="main">
-        <img class="sign" src="style/logo_10nopember.png">
+            <img class="sign" src="style/LogoPGRI-jombang.png">
             <p class="sign" align="center">Pembayaran SPP</p>
-            
-            
-            <div>
+            <div align="center">
                 <?php
                     if (isset($_SESSION['error'])) {
                         echo '<span style="color:red;">' . $_SESSION['error'] . '</span>';

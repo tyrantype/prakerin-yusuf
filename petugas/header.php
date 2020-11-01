@@ -21,11 +21,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../style/style.css">
         <style type="text/css">
-                li {margin-right: 10px;}
+            li {margin-right: 10px;}
         </style>
     </head>
 <body>
-    <div class="topnav" id="myTopnav">
+    <nav class="topnav" id="myTopnav">
         <!-- <a>Aplikasi Pembayaran SPP</a> -->
         <a href="?p=transaksi">Transaksi</a>
         <a href="?p=siswa">Data Siswa</a>
@@ -33,7 +33,7 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
-    </div>
+    </nav>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");

@@ -18,16 +18,16 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Halaman Admin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../style/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Halaman Admin</title>
         <style type="text/css">
             li {margin-right: 10px;}
         </style>
     </head>
 <body>
-    <div class="topnav" id="myTopnav">
+    <nav class="topnav" id="myTopnav">
         <a href="?p=beranda">Beranda</a>
         <a href="?p=siswa">Data Siswa</a>
         <a href="?p=petugas">Data Petugas</a>
@@ -38,7 +38,7 @@ session_start();
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
-    </div>
+    </nav>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");

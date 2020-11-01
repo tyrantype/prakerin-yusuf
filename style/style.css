@@ -362,12 +362,12 @@ select:hover{
     height: 30px;
 }
 #footer2{
-    background-color: rgb(248, 234, 161) ;
-    box-shadow: -2px -2px 13px grey; 
+    background-color: rgb(248, 234, 161);
+    box-shadow:0px 1px 7px 0.5px rgba(128, 128, 128, 0.548);
     /* padding-bottom: 3vh; */
     /* background-color: #000200; */
-    border-top-right-radius: 50% 100%;
-    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -378,7 +378,7 @@ select:hover{
     color: rgb(88, 88, 88);
 }
 #footer2 img{
-    width: 37px;
+    width: 63px;
 }
 
 @media screen and (max-width: 600px) {
