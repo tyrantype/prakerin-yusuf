@@ -381,7 +381,7 @@ select:hover{
     width: 63px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         float: right;
@@ -389,11 +389,11 @@ select:hover{
     }
 }
   
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
         position: absolute;
-        right: 0;
+        right: 20px;
         top: 0;
     }
     .topnav.responsive a {

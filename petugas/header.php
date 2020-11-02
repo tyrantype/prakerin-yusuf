@@ -18,7 +18,7 @@
     <head>
         <title>Halaman Petugas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <link rel="stylesheet" href="../style/style.css">
         <style type="text/css">
             li {margin-right: 10px;}
@@ -31,7 +31,7 @@
         <a href="?p=siswa">Data Siswa</a>
         <a id="logout" href="?p=logout">Logout</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
+            <div>☰</div>
         </a>
     </nav>
     <script>
