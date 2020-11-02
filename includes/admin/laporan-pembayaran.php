@@ -6,9 +6,9 @@
         <div style="display: inline-block;">
             <form method="POST">
                 <label>Tampilkan data dari tgl.</label> 
-                <input class="inputdate" type="date" name="tgl_awal">
+                <input class="inputdate" type="date" value="<?= date('Y-m-01') ?>" name="tgl_awal">
                 <label>sampai tgl.</label>
-                <input class="inputdate" type="date" name="tgl_akhir">
+                <input class="inputdate" type="date" value="<?= date('Y-m-t') ?>" name="tgl_akhir">
                 <button class="tombolbiru" type="submit" name="tampil" value="Tampilkan">Tampilkan</button>
             </form>
         </div>
