@@ -13,10 +13,7 @@
             </form>
         </div>
         <div style="display: inline-block;">
-            <form action="export.php" method="POST" id="convert_form">
-                <input type="hidden" name="file_content" id="file_content">
-                <button class="inputsubmit" type="submit" name="convert" id="convert" value="Convert ke Excel">Convert ke Excel</button>
-            </form>
+            <button class="inputsubmit" id="convert" onclick="convert()">Convert ke Excel</button>
         </div>
         <br/><br/>
 
@@ -78,16 +75,18 @@
     require_once 'footer.php'; 
 ?>
 
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<script src="xlsx.full.min.js"></script>
+<script src="filesaver.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#convert').click(function() {
-                var table_content = '<table>';
-                table_content += $('#table_content').html();
-                table_content += '</table>';
-                $('#file_content').val(table_content);
-            $('#convert_form').html();
-        });
-    });
+    var wb = XLSX.utils.table_to_book(document.getElementById('table_content'), {raw: true});
+    var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+    function s2ab(s) {
+                    var buf = new ArrayBuffer(s.length);
+                    var view = new Uint8Array(buf);
+                    for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+                    return buf;
+    }
+    function convert(){
+        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'admin-laporan-pembayaran.xlsx');
+    }
 </script>
