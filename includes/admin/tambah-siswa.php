@@ -49,11 +49,12 @@ if (isset($_POST['submit'])) {
             <label for="nama">Nama Lengkap</label>
             <input class="inputtext" type="text" name="nama" id="nama" placeholder="Masukkan Nama Lengkap" required><br>
            
-            <label for="kelas">Kelas</label>
+            <label for="kelas">Jurusan</label>
             <select name="kelas" id="kelas">
-                <option value="X">X</option>
-                <option value="XI">XI</option>
-                <option value="XII">XII</option>
+                <option value="TKJ">TKJ</option>
+                <option value="TKR">TKR</option>
+                <option value="TITL">TITL </option>
+                <option value="TPM">TPM</option>
             </select>
             <!-- <label for="tahun">Tahun</label><br>
              <select name="id_spp" id="tahun">

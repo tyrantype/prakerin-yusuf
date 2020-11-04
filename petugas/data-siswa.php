@@ -34,7 +34,7 @@
                                 echo "<div class='divTableHead'>NISN</div>";
                                 echo "<div class='divTableHead'>NIS</div>";
                                 echo "<div class='divTableHead'>Nama Lengkap</div>";
-                                echo "<div class='divTableHead'>Kelas</div>";
+                                echo "<div class='divTableHead'>Jurusan</div>";
                             echo "</div>";
                         echo "</div>";
                     foreach($rows as $row) :
@@ -64,7 +64,7 @@
                         <div class='divTableHead'>NISN</div>
                         <div class='divTableHead'>NIS</div>
                         <div class='divTableHead'>Nama Lengkap</div>
-                        <div class='divTableHead'>Kelas</div>
+                        <div class='divTableHead'>Jurusan</div>
                     </div>
                 ";
 

@@ -30,14 +30,15 @@
             <label for="nama">Nama Lengkap</label><br>
             <input class="inputtext" type="text" name="nama" id="nama" required value="<?= $row['nama_lengkap']; ?>">
             <br>
-            <label for="kelas">Kelas</label><br>
+            <label for="kelas">Jurusan</label><br>
             <select name="kelas" id="kelas">
                 <?php
                     echo "<option value='". $row['kelas'] ."' disabled selected>" .$row['kelas']."</option>";
                 ?>  
-                <option value="X">X</option>
-                <option value="XI">XI</option>
-                <option value="XII">XII</option>
+                <option value="TKJ">TKJ</option>
+                <option value="TKR">TKR</option>
+                <option value="TITL">TITL </option>
+                <option value="TPM">TPM</option>
             </select><br>
             <!-- <label for="tahun">Tahun</label><br>
             <select name="id_spp" id="tahun">
