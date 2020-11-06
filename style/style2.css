@@ -112,6 +112,5 @@ input[type=submit]:hover {
 @media (max-width: 600px) {
     .main {
         border-radius: 20px;
-        width: 60%;
     }
 }

@@ -56,6 +56,7 @@ table {
     border-collapse: collapse;
 }
 .divTable{
+    white-space: nowrap;
     display: table;
     max-width: 1400px;
     min-width: 400px;
@@ -266,7 +267,7 @@ table {
    bottom : 0px;
 } */
 
-.inputtext, .inputpassword, select {
+.inputtext,.boxcari, .inputpassword, select {
     width: 100%;
     padding: 10px 20px;
     margin-bottom: 15px;
@@ -393,7 +394,7 @@ select:hover{
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
         position: absolute;
-        right: 20px;
+        right: 0px;
         top: 0;
     }
     .topnav.responsive a {
@@ -401,4 +402,43 @@ select:hover{
         display: block;
         text-align: left;
     }
+    .boxcari{
+        width: 300px;
+    }
+    .formcaridata {
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+        border-radius: 5px;
+        width: 400px;
+        padding-bottom: 15px;
+    }
+    #kontainer-konten{
+        width: 100%;
+        padding-bottom: 100px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: -355px;
+        /* background-color: rgba(248, 234, 161, 0.342) ; */
+    }
+    #scrolltable{
+        padding-bottom: 35px;
+        padding-left: 5px;
+        padding-right: 5px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    #scrolltable-wrap{
+        /* background-color: rgba(248, 234, 161, 0.342) ; */
+        padding-top: 20px;
+        overflow-x: hidden;
+    }
+    /* #scrolltable::-webkit-scrollbar {
+        display: none;
+      } */
+    .pagination{
+        position: absolute;
+    }
+    
 }

@@ -33,7 +33,7 @@
             <label for="kelas">Jurusan</label><br>
             <select name="kelas" id="kelas">
                 <?php
-                    echo "<option value='". $row['kelas'] ."' disabled selected>" .$row['kelas']."</option>";
+                    echo "<option value='". $row['kelas'] ."'>" .$row['kelas']."</option>";
                 ?>  
                 <option value="TKJ">TKJ</option>
                 <option value="TKR">TKR</option>

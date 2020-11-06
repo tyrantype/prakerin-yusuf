@@ -34,7 +34,7 @@
             <label>Level</label><br/>
             <select name="level">
                 <?php
-                    echo "<option value='". $row['level'] ."' disabled selected>" .$row['level']."</option>";
+                    echo "<option value='". $row['level'] ."'>" .$row['level']."</option>";
                 ?>  
                 <option value="Admin">Admin</option>
                 <option value="Petugas">Petugas</option>
