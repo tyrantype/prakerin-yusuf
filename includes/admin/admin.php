@@ -141,16 +141,6 @@
             }
         }
 
-
-        /*public function tambahDataPembayaran($nisn, $bulan, $id_spp) {
-            $stmt = mysqli_query($this->konek, "INSERT INTO tb_pembayaran (nisn, bln_bayar, id_spp) VALUES ('$nisn','$bulan','$id_spp')");
-
-            if($stmt) {
-                return true;
-            } else {
-                return false;
-            }
-        }*/
         public function hapusDataPembayaran($nisn){
             $stmt = mysqli_query($this->konek, "DELETE FROM tb_pembayaran WHERE nisn = ".$nisn);
 
@@ -167,9 +157,6 @@
             INNER JOIN tb_petugas t ON t.id_petugas = p.id_petugas
             WHERE p.tgl_bayar BETWEEN '$date1' and '$date2'
             ORDER BY p.id_pembayaran");
-
-            // $stmt = mysqli_query($this->konek, "SELECT p.id_pembayaran, p.nisn, w.nama_lengkap, p.tgl_bayar, p.bln_bayar, s.tahun, t.nama_petugas FROM tb_pembayaran p INNER JOIN tb_siswa w ON w.nisn = p.nisn INNER JOIN tb_spp s ON s.id_spp = p.id_spp INNER JOIN tb_petugas t ON t.id_petugas = p.id_petugas WHERE p.tgl_bayar BETWEEN '$date1' and '$date2' ORDER BY p.id_pembayaran");
-    
             return $stmt;
         }    
 

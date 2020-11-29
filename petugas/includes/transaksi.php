@@ -2,6 +2,8 @@
 
 <div id="kontainer-konten">
     <div id="scrolltable-wrap" >
+
+        <!-- Form Pencarian siswa dengan NISN -->
         <form align="center"  method="GET" action="">
             <label></label>
             <input style="width:150px;" class="inputtext" placeholder="Masukkan NISN" type="text" name="nisn" value="<?php if (isset($_GET['nisn'])) { echo $_GET['nisn']; } ?>">
@@ -23,7 +25,6 @@
         </form><br/>
         
             <?php
-                
                 if(isset($_GET['nisn']) && isset($_GET['id_spp'])) {
                     $id_spp = $_GET['id_spp'];
                     $dt_tahun_spp = $petugas->getDataSPPbyId($id_spp);
@@ -40,6 +41,7 @@
                         foreach ($rows as $row) :
             ?>
 
+            <!-- Bagian informasi siswa -->
             <table>
                 <tr>
                     <td>NISN</td>
@@ -78,7 +80,8 @@
                     ?>
                 </p>
             </div>   
-              
+
+        <!-- Bagian Informasi Pembayaran -->
         <div id="scrolltable" style="">
             <div class="divTable">
                 <div class="divTableBody">

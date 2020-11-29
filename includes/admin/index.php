@@ -17,7 +17,8 @@
             elseif($_GET['p'] == 'hapus-siswa') {
                 if($admin->hapusDataSiswa($_GET['nisn']))
                 {
-                    $admin->hapusDataPembayaran($_GET['nisn']); // proses hapus data pembayaran
+                    // proses hapus data pembayaran
+                    $admin->hapusDataPembayaran($_GET['nisn']);
                     header('Location: ?p=siswa');
                     $_SESSION['pesan'] = "Data Siswa berhasil dihapus";
                 }else{
@@ -71,7 +72,7 @@
             }
         }
         elseif($_GET['p'] == 'laporan') { // jika nilai p = laporan
-            require_once 'laporan-pembayaran.php'; // maka panggil file laporan-pembayaran.php
+            require_once 'laporan-pembayaran.php'; // panggil file laporan-pembayaran.php
         }   
         elseif($_GET['p'] = 'logout') {
             header('Location: ../../index.php');

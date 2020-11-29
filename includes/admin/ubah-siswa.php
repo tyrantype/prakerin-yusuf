@@ -40,21 +40,7 @@
                 <option value="TITL">TITL </option>
                 <option value="TPM">TPM</option>
             </select><br>
-            <!-- <label for="tahun">Tahun</label><br>
-            <select name="id_spp" id="tahun">
-
-                <?php
-                    // $dt_spp = $admin->getDataSPP();
-                    // foreach ($dt_spp as $row) :
-                ?>
-
-                <option value="<//?= $row['id_spp']; ?>"><//?= $row['tahun']; ?></option>;
-
-                <?php
-                    // endforeach;
-                ?>
-
-            </select> -->
+            
             <input class="inputsubmit" type="submit" name="submit" value="Simpan">
         </form>
 

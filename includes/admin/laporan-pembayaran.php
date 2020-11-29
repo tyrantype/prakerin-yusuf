@@ -76,6 +76,7 @@
     require_once 'footer.php'; 
 ?>
 
+<!-- Library javascript export table data ke file Excel, pengganti PHPCOmposer -->
 <script src="xlsx.full.min.js"></script>
 <script src="filesaver.min.js"></script>
 <script type="text/javascript">
