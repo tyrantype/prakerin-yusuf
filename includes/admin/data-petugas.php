@@ -18,7 +18,7 @@
 
             <div class="divTable">
                 <div class="divTableBody">
-                    <div class="divTableRow">
+                    <div class="divTableRowHead">
                         <div class="divTableHead">No.</div>
                         <div class="divTableHead">Nama Petugas</div>
                         <div class="divTableHead">Username</div>

@@ -64,19 +64,22 @@ table {
 .divTableRow {
 	display: table-row;
 }
+.divTableRowHead {
+	display: table-row;
+    background: linear-gradient(to right, rgb(248, 234, 161), rgb(248, 234, 161), #F1D95C) ;
+}
 .divTableHeading {
 	background-color: rgb(238, 238, 238);
 	display: table-header-group;
 }
 .divTableCell, .divTableHead {
 	display: table-cell;
-	padding: 15px 20px;
+	padding: 18px 20px;
 }
 .divTableCell {
     border-top: 0.5px solid #999999;
 }
 .divTableHead {
-	background-color: #EEE;
 	font-weight: bold;
 }
 .divTableFoot {
@@ -86,6 +89,9 @@ table {
 }
 .divTableBody {
 	display: table-row-group;
+}
+.bgtable {
+    background: linear-gradient(to right, #F1D95C, #F1D95C, rgb(248, 234, 161)) ;
 }
 
 
@@ -106,6 +112,7 @@ table {
     overflow: hidden;
     z-index: 999;
     background-color: rgb(248, 234, 161) ;
+    background: linear-gradient(to left, #F1D95C, rgb(248, 234, 161), rgb(248, 234, 161)) ;
     box-shadow:0px 1px 7px 0.5px rgba(128, 128, 128, 0.548);
 }
 .topnav a{
@@ -263,9 +270,13 @@ table {
     padding: 10px 20px;
     margin-bottom: 15px;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 2px solid rgb(207, 207, 207);
     border-radius: 4px;
     box-sizing: border-box;
+    color: rgb(38, 50, 56);
+    font-weight: 400;
+    font-size: 15px;
+    background: rgb(255, 255, 255);
 }
 .inputdate{
     width: 150px;
@@ -292,6 +303,12 @@ select:hover{
     background-color: #45a0493f;
     border-radius: 5px;
     padding: 10px;
+}
+.inputtext:focus,
+.boxcari:focus,
+.inputpassword:focus,
+#tahun:focus{
+    border: 2px solid rgb(95, 151, 68) !important;
 }
 
 

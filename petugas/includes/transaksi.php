@@ -4,9 +4,9 @@
     <div id="scrolltable-wrap" >
 
         <!-- Form Pencarian siswa dengan NISN -->
-        <form align="center"  method="GET" action="">
+        <form class="form-search-transaksi" align="center"  method="GET" action="">
             <label></label>
-            <input style="width:150px;" class="inputtext" placeholder="Masukkan NISN" type="text" name="nisn" value="<?php if (isset($_GET['nisn'])) { echo $_GET['nisn']; } ?>">
+            <input style="width:180px;" class="inputtext" placeholder="Masukkan NISN" type="text" name="nisn" value="<?php if (isset($_GET['nisn'])) { echo $_GET['nisn']; } ?>">
 
             <label for="tahun"></label>
             <select style="width: 100px;" id="tahun" name="id_spp">
@@ -85,7 +85,7 @@
         <div id="scrolltable" style="">
             <div class="divTable">
                 <div class="divTableBody">
-                    <div class="divTableRow">
+                    <div class="divTableRowHead">
                         <div class="divTableHead">No.</div>
                         <div class="divTableHead">Bulan</div>
                         <div class="divTableHead">Nominal</div>

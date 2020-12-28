@@ -33,7 +33,7 @@
                         $i = 0;
                         echo "<div class='divTable'>";
                             echo "<div class='divTableBody'>";
-                                echo "<div class='divTableRow'>";
+                                echo "<div class='divTableRowHead'>";
                                     echo "<div class='divTableHead'>No</div>";
                                     echo "<div class='divTableHead'>NISN</div>";
                                     echo "<div class='divTableHead'>NIS</div>";
@@ -65,7 +65,7 @@
                     
                     echo "
                         <div class='divTable'>
-                            <div <div class='divTableBody'>
+                            <div <div class='divTableRowHead'>
                                 <div class='divTableHead'>No</div>
                                 <div class='divTableHead'>NISN</div>
                                 <div class='divTableHead'>NIS</div>

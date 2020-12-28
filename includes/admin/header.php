@@ -27,7 +27,7 @@ session_start();
     </head>
 <body>
     <nav class="topnav" id="myTopnav">
-        <a href="?p=beranda">Beranda</a>
+        <!-- <a href="?p=beranda">Beranda</a> -->
         <a href="?p=siswa">Data Siswa</a>
         <a href="?p=petugas">Data Petugas</a>
         <a href="?p=spp">Data SPP</a></li>
