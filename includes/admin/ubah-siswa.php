@@ -24,9 +24,12 @@
 <div id="kontainer-konten">
     <div class="kontainerform">
         <form method="post">
-            <input type="hidden" name="nisn" id="nisn" required value="<?= $row['nisn']; ?>"><br>
+            <label for="nis">NISN</label><br>
+            <input class="inputtext" type="text" name="nisn" id="nisn" required value="<?= $row['nisn']; ?>">
+            <br>
             <label for="nis">NIS</label><br>
-            <input class="inputtext" type="text" name="nis" id="nis" required value="<?= $row['nis']; ?>"><br>
+            <input class="inputtext" type="text" name="nis" id="nis" required value="<?= $row['nis']; ?>">
+            <br>
             <label for="nama">Nama Lengkap</label><br>
             <input class="inputtext" type="text" name="nama" id="nama" required value="<?= $row['nama_lengkap']; ?>">
             <br>

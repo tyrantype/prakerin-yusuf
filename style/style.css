@@ -5,6 +5,7 @@
   }
 html, body{
     background-color: rgb(250, 250, 250);
+    /* background: linear-gradient(to right, #FFEFBA, #FFFFFF, rgb(250, 250, 250)) ; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     height: 100%;
@@ -77,6 +78,7 @@ table {
 	padding: 18px 20px;
 }
 .divTableCell {
+    background-color: rgb(250, 250, 250);
     border-top: 0.5px solid #999999;
 }
 .divTableHead {

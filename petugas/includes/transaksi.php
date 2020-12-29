@@ -122,7 +122,7 @@
                     <div class="divTableRow">
                         <div class="divTableCell"><?= $x+1; ?></div>
                         <div class="divTableCell"><?= $dt_pembayaran[$x]['bln_bayar']; ?></div>
-                        <div class="divTableCell"><?= $dt_pembayaran[$x]['nominal_spp']; ?></div>
+                        <div class="divTableCell">Rp. <?= $dt_pembayaran[$x]['nominal_spp']; ?></div>
                         <div class="divTableCell"><?= $dt_pembayaran[$x]['tgl_bayar']; ?></div>
                         <div class="divTableCell"><?= $dt_pembayaran[$x]['keterangan']; ?></div>
                         <div class="divTableCell"><?= $dt_pembayaran[$x]['nama_petugas']; ?></div>

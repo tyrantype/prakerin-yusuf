@@ -31,7 +31,7 @@
                     <div class="divTableRow">
                         <div class="divTableCell"><?= $no++; ?></div>
                         <div class="divTableCell"><?= $dt_spp['tahun']; ?></div>
-                        <div class="divTableCell"><?= $dt_spp['nominal']; ?></div>
+                        <div class="divTableCell">Rp. <?= $dt_spp['nominal']; ?></div>
                         <div class="divTableCell"><a class="tombolbiru" href="?p=ubah-spp&id=<?= $dt_spp['id_spp'];?>">Ubah</a> <a class="hapus" href="?p=hapus-spp&id=<?= $dt_spp['id_spp'];?>" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a></div>
                     </div>
                     <?php
