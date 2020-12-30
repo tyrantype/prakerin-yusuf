@@ -15,4 +15,4 @@
             }
         }
     }
-    // $konek = new Koneksi;
+    $db = new Koneksi();

@@ -5,7 +5,12 @@ if (isset($_POST['submit'])) {
     $nis = $_POST['nis'];
     $nama = $_POST['nama'];
     $kelas = $_POST['kelas'];
-    // $id_spp = $_POST['id_spp'];
+    $tanggal_lahir = $_POST['tanggal_lahir'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $nomor_hp = $_POST['nomor_hp'];
+    $email = $_POST['email'];
+    $id_desa = $_POST['desa'];
+    
 
     $cek = $admin->cekDataSiswa($nisn, $nis);
 
@@ -16,13 +21,8 @@ if (isset($_POST['submit'])) {
     }
     else
     {
-        if($admin->tambahDataSiswa($nisn, $nis, $nama, $kelas))
+        if($admin->tambahDataSiswa($nisn, $nis, $nama, $kelas, $tanggal_lahir, $jenis_kelamin, $nomor_hp, $email, $id_desa))
         {
-            // $bulan[] = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-
-            // for ($i=0; $i < 12; $i++) { 
-            // $admin->tambahDataPembayaran($nisn, $bulan[0][$i], $id_spp);
-            // }
             header('Location: ?p=siswa');
             $_SESSION['pesan'] = "Data Siswa berhasil ditambah";
         }
@@ -56,26 +56,115 @@ if (isset($_POST['submit'])) {
                 <option value="TITL">TITL </option>
                 <option value="TPM">TPM</option>
             </select>
-            <!-- <label for="tahun">Tahun</label><br>
-             <select name="id_spp" id="tahun">
 
-                <?php
-                    // $dt_spp = $admin->getDataSPP();
-                    // foreach ($dt_spp as $row) :
-                ?>
+            <label>Tanggal Lahir</label>
+            <input type="date" class="inputtext" name="tanggal_lahir" required>
 
-                <option value="<//?= $row['id_spp']; ?>"><//?= $row['tahun']; ?></option>;
+            <label>Jenis Kelamin</label>
+            <select name="jenis_kelamin" id="jenis_kelamin">
+                <option value="L">L</option>
+                <option value="P">P</option>
+            </select>
 
-                <?php
-                   // endforeach;
-                ?>
+            <label for="provinsi">Provinsi</label>
+            <select name="provinsi" id="provinsi" required>
+                <option value="" selected disabled>Pilih provinsi</option>
+            </select>
 
-            </select> -->
-            <br>
+            <label for="kabupaten">Kabupaten</label>
+            <select name="kabupaten" id="kabupaten" required>
+                <option value="" selected disabled>Pilih kabupaten</option>
+            </select>
+
+            <label for="kecamatan">Kecamatan</label>
+            <select name="kecamatan" id="kecamatan" required>
+                <option value="" selected disabled>Pilih kecamatan</option>
+            </select>
+
+            <label for="desa">Desa</label>
+            <select name="desa" id="desa" required>
+                <option value="" selected disabled>Pilih desa</option>
+            </select>
+
+            <label>Nomor HP (Opsional)</label>
+            <input type="text" class="inputtext" name="nomor_hp" placeholder="Nomor HP">
+
+            <label>Email (Opsional)</label>
+            <input type="email" class="inputtext" name="email" placeholder="Email">
+
             <input class="inputsubmit" type="submit" name="submit" value="Simpan">
         </form>
     </div>
 </div>
+<script>
+    window.addEventListener('DOMContentLoaded', function(event) {
+        fillSelect('provinsi');
+    });
+
+    document.getElementById('provinsi').addEventListener('change', function(event) {
+        clearSelect('kabupaten');
+        clearSelect('kecamatan');
+        clearSelect('desa');
+        fillSelect('kabupaten', 'provinsi');
+    });
+
+    document.getElementById('kabupaten').addEventListener('change', function(event) {
+        clearSelect('kecamatan');
+        clearSelect('desa');
+        fillSelect('kecamatan', 'kabupaten');
+    });
+
+    document.getElementById('kecamatan').addEventListener('change', function(event) {
+        clearSelect('desa');
+        fillSelect('desa', 'kecamatan');
+    });
+
+    function clearSelect(id) {
+        let select = document.getElementById(id);
+        const length = select.options.length;
+        for( i = length; i > 0; i--) {
+            select.remove(i);
+        }
+        select.selectedIndex = 0;
+    }
+
+    function fillSelect(id, parent = null) {
+        let select = document.getElementById(id);
+        let parentSelect = null;
+        if(parent !== null) {
+            parentSelect = document.getElementById(parent);
+            if(parentSelect.selectedIndex === 0) {
+                return;
+            }
+        }
+
+        const ajax = new XMLHttpRequest();
+        let url = null;
+        if(parent !== null) {
+            url = window.location.origin + window.location.pathname + `get${id}.php?id_${parent}=${parentSelect.value}`;
+        } else {
+            url = window.location.origin + window.location.pathname + `get${id}.php`;
+        }
+        ajax.open('GET', url);
+        ajax.onload = function() {
+            try {
+                let response = JSON.parse(ajax.responseText);
+                if(ajax.status === 200) {
+                    for(i = 0; i < response.length; i++) {
+                        let option = document.createElement('option');
+                        option.value = response[i].id;
+                        option.textContent = response[i].nama;
+                        select.add(option);
+                    }
+                }
+            } catch(e) {
+                console.log(e.message);
+                console.log(ajax.responseText);
+            }
+        }
+        ajax.send();
+    }
+</script>
 <?php
 
     require_once 'footer.php'; 

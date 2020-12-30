@@ -97,8 +97,8 @@
             }
         }
         //tambah Data Siswa
-        public function tambahDataSiswa($nisn, $nis, $nama, $kelas) {
-            $stmt = mysqli_query($this->konek, "INSERT INTO tb_siswa VALUES ('$nisn','$nis','$nama','$kelas')");
+        public function tambahDataSiswa($nisn, $nis, $nama, $kelas, $tanggal_lahir, $jenis_kelamin, $nomor_hp, $email, $id_desa) {
+            $stmt = mysqli_query($this->konek, "INSERT INTO tb_siswa VALUES ('$nisn','$nis','$nama','$kelas', '$tanggal_lahir', '$jenis_kelamin', '$nomor_hp', '$email', $id_desa)");
 
             if($stmt) {
                 return true;
@@ -117,7 +117,12 @@
             }
         }
         public function getDataSiswaByNisn($nisn){
-            $stmt = mysqli_query($this->konek, "SELECT * FROM tb_siswa WHERE nisn = '$nisn'");
+            $stmt = mysqli_query($this->konek, "SELECT tb_siswa.*, kecamatan.id id_kecamatan, kabupaten.id id_kabupaten, provinsi.id id_provinsi FROM tb_siswa 
+            INNER JOIN wilayah_administratif_indonesia.desa ON desa.id = tb_siswa.id_desa
+            INNER JOIN wilayah_administratif_indonesia.kecamatan ON kecamatan.id = desa.id_kecamatan
+            INNER JOIN wilayah_administratif_indonesia.kabupaten ON kabupaten.id = kecamatan.id_kabupaten
+            INNER JOIN wilayah_administratif_indonesia.provinsi ON provinsi.id = kabupaten.id_provinsi
+            WHERE nisn = '$nisn'");
 
             return $stmt;
         }
@@ -167,13 +172,21 @@
 
         public function getSiswaDataNth($page) {
             $start = ($page * 10) - 9;
-            $stmt = mysqli_query($this->konek, "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY nisn) row_num, nisn, nis, nama_lengkap, kelas FROM tb_siswa) tb_siswa_ordered WHERE row_num >= $start LIMIT 10");
+            $stmt = mysqli_query($this->konek, "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY nisn) row_num, tb_siswa.*, desa.nama desa, kecamatan.nama kecamatan, kabupaten.nama kabupaten, provinsi.nama provinsi FROM tb_siswa 
+            INNER JOIN wilayah_administratif_indonesia.desa ON desa.id = tb_siswa.id_desa
+            INNER JOIN wilayah_administratif_indonesia.kecamatan ON kecamatan.id = desa.id_kecamatan
+            INNER JOIN wilayah_administratif_indonesia.kabupaten ON kabupaten.id = kecamatan.id_kabupaten
+            INNER JOIN wilayah_administratif_indonesia.provinsi ON provinsi.id = kabupaten.id_provinsi) tb_siswa_ordered WHERE row_num >= $start LIMIT 10");
             return $stmt;
         }
 
         public function getDataSiswaByNISNAndName($values1) {
             $values2 = explode(" ", $values1);
-            $sql = "SELECT * FROM tb_siswa WHERE ";
+            $sql = "SELECT tb_siswa.*, desa.nama desa, kecamatan.nama kecamatan, kabupaten.nama kabupaten, provinsi.nama provinsi FROM tb_siswa 
+            INNER JOIN wilayah_administratif_indonesia.desa ON desa.id = tb_siswa.id_desa
+            INNER JOIN wilayah_administratif_indonesia.kecamatan ON kecamatan.id = desa.id_kecamatan
+            INNER JOIN wilayah_administratif_indonesia.kabupaten ON kabupaten.id = kecamatan.id_kabupaten
+            INNER JOIN wilayah_administratif_indonesia.provinsi ON provinsi.id = kabupaten.id_provinsi WHERE ";
             $len = count($values2);
             $i = 0;
             foreach($values2 as $value) :
