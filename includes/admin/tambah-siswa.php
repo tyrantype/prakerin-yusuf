@@ -141,9 +141,9 @@ if (isset($_POST['submit'])) {
         const ajax = new XMLHttpRequest();
         let url = null;
         if(parent !== null) {
-            url = window.location.origin + window.location.pathname + `get${id}.php?id_${parent}=${parentSelect.value}`;
+            url = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + `/get${id}.php?id_${parent}=${parentSelect.value}`;
         } else {
-            url = window.location.origin + window.location.pathname + `get${id}.php`;
+            url = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + `/get${id}.php`;
         }
         ajax.open('GET', url);
         ajax.onload = function() {
