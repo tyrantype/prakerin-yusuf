@@ -3,7 +3,7 @@
         var $host = 'localhost';
         var $user = 'root';
         var $pass = '';
-        var $db_name = 'spp-pi-revisi'; // nama database
+        var $db_name = 'spp-pi-revisi-v2'; // nama database
 
         public function __construct() {
             $this->konek = mysqli_connect($this->host, $this->user, $this->pass, $this->db_name);
