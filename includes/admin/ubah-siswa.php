@@ -2,17 +2,6 @@
     require_once 'header.php';
 ?>
 <?php
-    if(isset($_POST['submit'])) {
-        if($admin->ubahDataSiswa($_POST['nis'], $_POST['nama'], $_POST['kelas'], $_POST['nisn']))
-        {
-            header('Location: ?p=siswa');
-            $_SESSION['pesan'] = "Data Siswa berhasil diubah";
-        } else {
-            header('Location: ?p=siswa');
-            $_SESSION['pesan'] = "Data Siswa gagal diubah";
-        }
-    }
-
     if(isset($_GET['nisn'])) {
         $dt_siswa = $admin->getDataSiswaByNisn($_GET['nisn']);
 
@@ -20,10 +9,15 @@
 ?>
 
 <h2>Ubah Data Siswa</h2>
-
+<script>
+    const siswa = {
+        nisn : <?= $row['nisn'] ?>,
+        nis : <?= $row['nis'] ?>
+    }
+</script>
 <div id="kontainer-konten">
     <div class="kontainerform">
-        <form method="post">
+        <form method="post" id="editForm">
             <label for="nis">NISN</label><br>
             <input class="inputtext" type="text" name="nisn" id="nisn" required value="<?= $row['nisn']; ?>">
             <br>
@@ -97,6 +91,52 @@
     </div>
 </div>
 <script>
+    const editForm = document.forms['editForm'];
+
+    editForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `./cek-siswa.php?nisn=${siswa.nisn}&nis=${siswa.nis}&new_nisn=${editForm['nisn'].value}&new_nis=${editForm['nis'].value}`);
+        xhr.onload = function() {
+            try {
+                const response = JSON.parse(xhr.responseText);
+                if(xhr.status === 200) {
+                    if(response.totalRows > 0) {
+                        alert('NISN atau NIS sudah terpakai');
+                    } else {
+                        const xhr2 = new XMLHttpRequest();
+                        const formData = new FormData(editForm);
+                        xhr2.open('POST', './proses-ubah-siswa.php');
+
+                        xhr2.onload = function() {
+                            try {
+                                window.response2 = JSON.parse(xhr2.responseText);
+                                if(xhr.status === 200) {
+                                    if(response2.status === 'sukses') {
+                                        window.location.replace('./?p=siswa');
+                                    } else {
+                                        alert('Data gagal diubah');
+                                    }
+                                }
+                            } catch(e) {
+                                console.log(e.message);
+                                console.log(xhr.responseText);
+                            }
+                        }
+
+                        xhr2.send(formData);
+                    }
+                } else {
+                    console.log(xhr.responseText);
+                }
+            } catch(e) {
+                console.log(e.message);
+                console.log(xhr.responseText);
+            }
+        }
+        xhr.send();
+    })
+
     window.addEventListener('DOMContentLoaded', function(event) {
         fillSelect('provinsi', null, id_provinsi);
     });

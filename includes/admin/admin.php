@@ -127,8 +127,8 @@
             return $stmt;
         }
         //ubah Data Siswa
-        public function ubahDataSiswa($nis, $nama, $kelas, $nisn) {
-            $stmt = mysqli_query($this->konek, "UPDATE tb_siswa SET nis ='$nis', nama_lengkap = '$nama', kelas = '$kelas' WHERE nisn = '$nisn'");
+        public function ubahDataSiswa($nisn, $nis, $nama, $kelas, $tanggal_lahir, $jenis_kelamin, $nomor_hp, $email, $id_desa) {
+            $stmt = mysqli_query($this->konek, "UPDATE tb_siswa SET nisn=$nisn, nis ='$nis', nama_lengkap = '$nama', kelas = '$kelas', tanggal_lahir = '$tanggal_lahir', jenis_kelamin='$jenis_kelamin', nomor_hp='$nomor_hp', email='$email', id_desa='$id_desa' WHERE nisn = '$nisn'");
             if($stmt) {
                 return true;
             } else {
