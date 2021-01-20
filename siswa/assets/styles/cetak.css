@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#print-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#table-siswa {
+    align-self: flex-start;
+    border: 0;
+}
+
+#table-siswa th {
+    text-align: left;
+}
+
+#table-pembayaran, #table-pembayaran tr, #table-pembayaran th, #table-pembayaran td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#ttd {
+    align-self: flex-end;
+}

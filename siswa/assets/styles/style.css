@@ -1,0 +1,57 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+table#profile  th {
+    text-align: left;
+}
+
+.modal-dialog {
+    display: none;
+    place-items: center;
+    position: fixed;
+    background-color: rgba(0,0,0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    overflow: auto;
+}
+
+.modal-content {
+    width: 700px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.8em;
+}
+
+.modal-content figure {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#previewBuktiPembayaran {
+    display: none;
+    width: 50%;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#print-area {
+    display: none;
+}

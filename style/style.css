@@ -444,3 +444,35 @@ select:hover{
     }
     
 }
+
+.modal-dialog {
+    display: none;
+    place-items: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    z-index: 99;
+}
+
+.modal-content {
+    width: 700px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.modal-content figure {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content img {
+    width: 50%;
+}
+
+#nama-pengirim-group, #nama-bank-pengirim-group, #bukti-pembayaran-group, #status-keterangan-group {
+    display: none;
+}
