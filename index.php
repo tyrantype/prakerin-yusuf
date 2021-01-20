@@ -7,9 +7,11 @@
     if(isset($_SESSION['id'])) {
         if($_SESSION['level'] == "Admin") {
             header('Location: includes/admin/?p=beranda');
-            } else {
-                header('Location: petugas/?p=home');
+        } elseif($_SESSION['level'] == "petugas") {
+            header('Location: petugas/?p=home');
         }
+    } elseif (isset($_SESSION['nisn'])) {
+        header('Location: ./siswa/');
     }
 
     if (isset($_POST['masuk'])) {
@@ -33,7 +35,17 @@
                 $_SESSION['level'] = $data['level'];
             }
         } else {
-            $_SESSION['error'] = "Username atau Password salah";
+            $masuk = $proses->loginSiswa($username, $password);
+
+            if($masuk->num_rows > 0) {
+                $data = mysqli_fetch_assoc($masuk);
+                header('Location: ./siswa/');
+                $_SESSION['nisn'] = $data['nisn'];
+                $_SESSION['nama'] = $data['nama_lengkap'];
+                $_SESSION['level'] = 'siswa';
+            } else {
+                $_SESSION['error'] = "Username atau Password salah";
+            }
         }
     }
 ?>

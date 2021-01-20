@@ -16,3 +16,4 @@
         }
     }
     $db = new Koneksi();
+    $conn = new mysqli('localhost', 'root', '', 'spp-pi-revisi-v2');

@@ -7,6 +7,12 @@
 
             return $stmt;
         }
+
+        public function loginSiswa($nisn, $password) {
+            $stmt = mysqli_query($this->konek, "SELECT * FROM tb_siswa WHERE nisn = '" . $nisn . "' AND password = '" . $password . "'");
+
+            return $stmt;
+        }
     }
     // $proses = new Proses;
     // var_dump($proses->loginPetugas('admin','admin'));
