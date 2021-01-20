@@ -23,7 +23,7 @@
         }
 
         public function getDataPembayaran($nisn, $id_spp) {
-            $stmt = mysqli_query($this->konek, "SELECT p.bln_bayar, p.id_pembayaran, p.tgl_bayar, pt.nama_petugas FROM tb_pembayaran AS p INNER JOIN tb_spp AS s ON p.id_spp = s.id_spp INNER JOIN tb_petugas AS pt ON p.id_petugas = pt.id_petugas WHERE p.nisn = '$nisn' AND p.id_spp= $id_spp");
+            $stmt = mysqli_query($this->konek, "SELECT p.bln_bayar, p.id_pembayaran, p.tgl_bayar, pt.nama_petugas, p.status, p.keterangan FROM tb_pembayaran AS p INNER JOIN tb_spp AS s ON p.id_spp = s.id_spp LEFT JOIN tb_petugas AS pt ON p.id_petugas = pt.id_petugas WHERE p.nisn = '$nisn' AND p.id_spp= $id_spp");
             return $stmt;
         }
 
@@ -36,7 +36,7 @@
 
         public function batalBayar($id_pembayaran) {
             $stmt = mysqli_query($this->konek, "DELETE FROM tb_pembayaran WHERE id_pembayaran=$id_pembayaran");
-
+            unlink("../siswa/assets/images/bukti-pembayaran/$id_pembayaran.jpg");
             return $stmt;
         }
 
