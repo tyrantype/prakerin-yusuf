@@ -1,15 +1,14 @@
 <h2>Profil</h2>
-<div id="kontainer-konten">
-    <div id="scrolltable-wrap" >
-        <table id="profile">
-        </table>
-    </div>
-</div>
 <br>
+<div align="center" id="scrolltable-wrap" >
+    <table id="profile">
+    </table>
+</div>
 
-<h2>Ubah Password</h2>
 <div id="kontainer-konten">
     <div class="kontainerform">
+        <h3 align="center">Ubah Password</h2>
+
         <form method="POST" id="ubahPassword">
             <label for="passwordLama">Password Lama</label>
             <input class="inputpassword" type="password" id="passwordLama" name="passwordLama" required>
