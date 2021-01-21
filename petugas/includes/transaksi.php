@@ -364,7 +364,7 @@
         xhr.onload = () => {
             const response = JSON.parse(xhr.responseText);
             if (response.status === 'success') {
-                document.getElementById('tanggal-bayar').value = response.data.tgl_bayar;
+                document.getElementById('tanggal-bayar').value = response.data.tgl_bayar.replace(' ', 'T').substring(0, 16);
                 document.getElementById('metode-pembayaran').value = response.data.id_metode_pembayaran;
                 if(response.data.id_metode_pembayaran !== '4') {
                     document.getElementById('nama-pengirim').value = response.data.nama_pengirim;
@@ -386,6 +386,7 @@
     function submitForm() {
         const xhr = new XMLHttpRequest();
         const formData = new FormData(document.forms['detail-pembayaran-form']);
+        formData.set('tgl_bayar', document.getElementById('tanggal-bayar').value.replace('T', ' '));
         xhr.open('POST', 'api/post/?q=bayar-' + method);
         xhr.onload = () => {
             const response = JSON.parse(xhr.responseText);

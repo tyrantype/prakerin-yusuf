@@ -7,7 +7,7 @@ $conn->begin_transaction();
 $sql = "
     UPDATE tb_pembayaran
     SET
-        tgl_bayar = '$_POST[tgl_bayar],
+        tgl_bayar = '$_POST[tgl_bayar]',
         id_petugas = '$_SESSION[id]',
         id_metode_pembayaran = '$_POST[id_metode_pembayaran]',
         nama_pengirim = '$_POST[nama_pengirim]',
@@ -53,7 +53,7 @@ if ($conn->query($sql)) {
             $conn->rollback();
             $response['status'] = 'failed';
             $response['data']  = array(
-                'message' => 'Kesalahan eksekusi query'
+                'message' => 'Kesalahan eksekusi query 2'
             );
         }
     } else {
@@ -66,7 +66,7 @@ if ($conn->query($sql)) {
 } else {
     $response['status'] = 'failed';
     $response['data'] = array(
-        'message' => 'Kesalahan eksekusi query'
+        'message' => "Kesalahan eksekusi query 1 $sql"
     );
     $conn->rollback();
 }
