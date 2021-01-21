@@ -171,7 +171,7 @@
             <br>
 
             <label for="tanggal-bayar">Tanggal Bayar</label>
-            <input type="date" name="tgl_bayar" id="tanggal-bayar" required>
+            <input type="datetime-local" name="tgl_bayar" id="tanggal-bayar" required>
             <br>
 
             <label for="metode-pembayaran">Metode Pembayaran</label>
@@ -296,7 +296,9 @@
         document.getElementById('bulan-bayar').value = row.item(1).textContent;
         
         if(mode === 'new') {
-            document.forms['detail-pembayaran-form']['tanggal-bayar'].valueAsDate = new Date();
+            let now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.forms['detail-pembayaran-form']['tanggal-bayar'].value = now.toISOString().slice(0,16);
         } else if (mode === 'exist') {
             getDetailPembayaran(document.getElementById('nisn-span').textContent, document.getElementById('tahun').value, row.item(1).textContent);
         }

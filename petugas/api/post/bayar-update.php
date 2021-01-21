@@ -7,6 +7,7 @@ $conn->begin_transaction();
 $sql = "
     UPDATE tb_pembayaran
     SET
+        tgl_bayar = '$_POST[tgl_bayar],
         id_petugas = '$_SESSION[id]',
         id_metode_pembayaran = '$_POST[id_metode_pembayaran]',
         nama_pengirim = '$_POST[nama_pengirim]',
