@@ -18,7 +18,7 @@
         <br/><br/>
         <div id="scrolltable" style="">        
             <!-- Table menampilkan Data Transaksi -->
-            <table class="divTable" id="table_content">
+            <table class="divTableLaporan" id="table_content">
                 <tr class="divTableRowHead">
                     <th class="divTableHead">No.</th>
                     <th class="divTableHead">ID Transaksi</th>
