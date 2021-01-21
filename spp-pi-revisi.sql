@@ -55,7 +55,7 @@ INSERT INTO `tb_metode_pembayaran` (`id`, `nama_bank`, `nama_pemilik_rekening`, 
 CREATE TABLE `tb_pembayaran` (
   `id_pembayaran` int(11) NOT NULL,
   `nisn` int(11) NOT NULL,
-  `tgl_bayar` date NOT NULL DEFAULT current_timestamp(),
+  `tgl_bayar` datetime NOT NULL DEFAULT current_timestamp(),
   `bln_bayar` varchar(15) NOT NULL,
   `id_spp` int(11) NOT NULL,
   `id_petugas` int(11) DEFAULT NULL,
