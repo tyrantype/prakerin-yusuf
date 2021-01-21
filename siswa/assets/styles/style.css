@@ -1,15 +1,66 @@
-table, th, td {
-    border: 1px solid black;
+table{
+    /* border: 1px solid black; */
     border-collapse: collapse;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
-th, td {
-    padding-left: 1em;
-    padding-right: 1em;
+th{
+    
+    padding: 18px 20px;
+}
+td{
+    padding: 9px 20px;
+}
+thead{
+    padding: 18px 20px;
+    background: linear-gradient(to right, rgb(248, 234, 161), rgb(248, 234, 161), #F1D95C) ;
+}
+tbody tr {
+    background-color: rgb(250, 250, 250);
+    border-top: 0.5px solid #999999;
+}
+
+.profiletabel{
+    white-space: nowrap;
+    display: table;
+    max-width: 1300px;
+    overflow: auto;
+    min-width: 400px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    display:inline-block;
 }
 
 table#profile  th {
     text-align: left;
+}
+
+.btn-cetak {
+    background-color: rgb(26, 141, 248);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 17px;
+}
+.btn-cetak:hover {
+    background-color: rgb(20, 121, 216);
+    color: white;
+    cursor: pointer;
+}
+.btn-bayar {
+    background-color: rgb(98, 184, 98);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 17px;
+}
+.btn-bayar:hover{
+    background-color: rgb(37, 168, 37);
+    cursor: pointer;
+    color: white;
 }
 
 .modal-dialog {

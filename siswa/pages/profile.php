@@ -1,7 +1,10 @@
 <h2>Profil</h2>
-
-<table id="profile">
-</table>
+<div id="kontainer-konten">
+    <div id="scrolltable-wrap" >
+        <table id="profile">
+        </table>
+    </div>
+</div>
 <br>
 
 <h2>Ubah Password</h2>

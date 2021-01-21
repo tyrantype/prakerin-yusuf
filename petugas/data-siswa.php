@@ -32,7 +32,6 @@
                             echo "<div class='divTableBody'>";
                                 echo "<div class='divTableRowHead'>";
                                     echo "<div class='divTableHead'>No</div>";
-                                    echo "<div class='divTableHead'>Aksi</div>";
                                     echo "<div class='divTableHead'>NISN</div>";
                                     echo "<div class='divTableHead'>NIS</div>";
                                     echo "<div class='divTableHead'>Nama Lengkap</div>";
@@ -40,15 +39,13 @@
                                     echo "<div class='divTableHead'>Tanggal Lahir</div>";
                                     echo "<div class='divTableHead'>Jenis Kelamin</div>";
                                     echo "<div class='divTableHead'>Nomor HP</div>";
-                                    echo "<div class='divTableHead'>Email</div>";
-                                    echo "<div class='divTableHead'>Alamat</div>";
+                                    
                                 echo "</div>";
                             echo "</div>";
                         foreach($rows as $row) :
                                 echo "<div class='divTableBody'>";
                                     echo "<div class='divTableRow'>";
                                         echo "<div class='divTableCell'>".++$i."</div>";
-                                        echo "<div class='divTableCell'><a class='tombolbiru' href=\"?p=ubah-siswa&nisn=" . $row['nisn'] . "\">Ubah</a> <a class='hapus' href=\"?p=hapus-siswa&nisn=" . $row['nisn'] . "\"onclick=\"return confirm('Yakin ingin menghapus?')\">Hapus</a></div>";
                                         echo "<div class='divTableCell'>".$row['nisn']."</div>";
                                         echo "<div class='divTableCell'>".$row['nis']."</div>";
                                         echo "<div class='divTableCell'>".$row['nama_lengkap']."</div>";
@@ -57,9 +54,7 @@
                                         echo "<div class='divTableCell'>".$row['jenis_kelamin']."</div>";
                                         $nomor_hp = empty($row['nomor_hp']) ? '-' : $row['nomor_hp'];
                                         echo "<div class='divTableCell'>".$nomor_hp."</div>";
-                                        $email = empty($row['email']) ? '-' : $row['email'];
-                                        echo "<div class='divTableCell'>".$email."</div>";
-                                        echo "<div class='divTableCell'>Desa ".ucwords(strtolower($row['desa'])).', Kecamatan '.ucwords(strtolower($row['kecamatan'])).', '.ucwords(strtolower($row['kabupaten'])).', Provinsi '.ucwords(strtolower($row['provinsi']))."</div>";
+
                                     echo "</div>";
                                 echo "</div>";
                         endforeach;
@@ -76,7 +71,6 @@
                     <div class='divTable'>
                         <div <div class='divTableRowHead'>
                             <div class='divTableHead'>No</div>
-                            <div class='divTableHead'>Aksi</div>
                             <div class='divTableHead'>NISN</div>
                             <div class='divTableHead'>NIS</div>
                             <div class='divTableHead'>Nama Lengkap</div>
@@ -84,8 +78,6 @@
                             <div class='divTableHead'>Tanggal Lahir</div>
                             <div class='divTableHead'>Jenis Kelamin</div>
                             <div class='divTableHead'>Nomor HP</div>
-                            <div class='divTableHead'>Email</div>
-                            <div class='divTableHead'>Alamat</div>
                         </div>
                     ";
 
@@ -101,7 +93,6 @@
                         echo "
                             <div class='divTableRow'>
                                 <div class='divTableCell'>".$row['row_num']."</div>
-                                <div class='divTableCell'><a class='tombolbiru' href=\"?p=ubah-siswa&nisn=" . $row['nisn'] . "\">Ubah</a> <a class='hapus' href=\"?p=hapus-siswa&nisn=" . $row['nisn'] . "\"onclick=\"return confirm('Yakin ingin menghapus?')\">Hapus</a></div>
                                 <div class='divTableCell'>".$row['nisn']."</div>
                                 <div class='divTableCell'>".$row['nis']."</div>
                                 <div class='divTableCell'>".$row['nama_lengkap']."</div>
@@ -109,8 +100,6 @@
                                 <div class='divTableCell'>".$row['tanggal_lahir']."</div>
                                 <div class='divTableCell'>".$row['jenis_kelamin']."</div>
                                 <div class='divTableCell'>".$nomor_hp."</div>
-                                <div class='divTableCell'>".$email."</div>
-                                <div class='divTableCell'>Desa ".ucwords(strtolower($row['desa'])).', Kecamatan '.ucwords(strtolower($row['kecamatan'])).', '.ucwords(strtolower($row['kabupaten'])).', Provinsi '.ucwords(strtolower($row['provinsi']))."</div>
                             </div>
                         ";
                     endforeach;

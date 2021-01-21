@@ -4,9 +4,10 @@ const xhr = new XMLHttpRequest();
 xhr.open('GET', 'api/get/?q=profile');
 xhr.onload = () => {
     const data = JSON.parse(xhr.responseText).data[0];
+    table.classList.add('profiletabel');
+
     for (key in data) {
         const tr = document.createElement('tr');
-
         const th = document.createElement('th');
         th.textContent = key;
         tr.appendChild(th);

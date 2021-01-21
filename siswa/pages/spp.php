@@ -1,24 +1,35 @@
-<label for="selectSPP">Pilih tahun</label>
-<select name="selectSPP" id="selectSPP"></select>
 
-<p>Tahun Pembayaran SPP : <span id="tahunSPP"></span></p>
-<p>Nominal SPP : <span id="nominalSPP"></span></p>
-<button type="button" id="cetakSemua">Cetak semua</button>
-<br>
-<br>
-<table id="tableSPP">
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>Bulan</th>
-            <th>Tanggal Bayar</th>
-            <th>Status</th>
-            <th>Keterangan</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<div id="kontainer-konten">
+    <div id="scrolltable-wrap" >
+        <form align="center" action="">
+            <label for="selectSPP">Pilih tahun</label>
+            <select style="width: 100px;" name="selectSPP" id="selectSPP"></select>
+
+            <p>Tahun Pembayaran SPP : <span id="tahunSPP"></span></p>
+            <p>Nominal SPP : <span id="nominalSPP"></span></p>
+            <button class="btn-cetak" type="button" id="cetakSemua">Cetak semua</button>
+            <br>
+            <br>
+        </form>
+        
+        <table id="tableSPP">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Bulan</th>
+                    <th>Tanggal Bayar</th>
+                    <th>Status</th>
+                    <th>Keterangan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>    
+</div>
+    
 
 
 
