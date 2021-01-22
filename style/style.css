@@ -181,9 +181,16 @@ table {
     color: rgb(236, 56, 56);
     /* background-color:rgb(236, 56, 56); */
 }
+.hapus[type=button]{
+    background-color:rgb(236, 56, 56);
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+}
 .hapus:hover{
     background-color:rgb(219, 48, 48);
     color: white;
+    cursor: pointer;
 }
 
 .tombolhijau{
@@ -317,6 +324,7 @@ select:hover{
 .inputtext:focus,
 .boxcari:focus,
 .inputpassword:focus,
+.input-ket:focus,
 #tahun:focus{
     border: 2px solid rgb(95, 151, 68) !important;
 }
@@ -468,7 +476,42 @@ select:hover{
 .modal-content {
     width: 700px;
     background-color: white;
-    padding: 1rem;
+    padding: 0px 20px 20px;
+    border-radius: 10px;
+}
+
+.form-modal div {
+    padding-bottom: 10px;
+}
+
+.form-modal input{
+    border: none;
+}
+
+.form-modal label{
+    display: inline-block;
+    min-width: 180px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* background-color: wheat; */
+}
+
+.form-modal input[type=text]#keterangan{
+    border: 2px solid rgb(207, 207, 207);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: rgb(38, 50, 56);
+    font-weight: 400;
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.form-modal select{
+    width: 300px;
+    height: 30px;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .modal-content figure {

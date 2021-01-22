@@ -151,45 +151,44 @@
 </div>
 <div class="modal-dialog" id="modal-detail-pembayaran">
     <div class="modal-content">
-        <p><strong>Detail Pembayaran</strong></p>
-        <form method="post" id="detail-pembayaran-form">
-            <label for="nama">Nama</label>
-            <input type="text" id="nama" readonly>
-            <br>
-
-            <label for="nisn">NISN</label>
-            <input type="text" name="nisn" id="nisn" readonly>
-            <br>
-
-            <label for="tahun">Tahun</label>
-            <input type="text" id="tahun-bayar" readonly>
-            <input type="hidden" name="id_spp" required>
-            <br>
-
-            <label for="bulan-bayar">Bulan</label>
-            <input type="text" name="bln_bayar" id="bulan-bayar" readonly required>
-            <br>
-
-            <label for="tanggal-bayar">Tanggal Bayar</label>
-            <input type="datetime-local" name="tgl_bayar" id="tanggal-bayar" required>
-            <br>
-
-            <label for="metode-pembayaran">Metode Pembayaran</label>
-            <select name="id_metode_pembayaran" id="metode-pembayaran" required>
-                <option value="" selected disabled>Pilih metode pembayaran</option>
-            </select>
-            <br>
+        <h3><strong>Detail Pembayaran</strong></h3>
+        <form class="form-modal" method="post" id="detail-pembayaran-form">
+            <div>
+                <label class="modal-label" for="nama">Nama</label>
+                <input type="text" id="nama" readonly>
+            </div>
+            <div>
+                <label for="nisn">NISN</label>
+                <input type="text" name="nisn" id="nisn" readonly>    
+            </div>
+            <div>
+                <label for="tahun">Tahun</label>
+                <input type="text" id="tahun-bayar" readonly>
+                <input type="hidden" name="id_spp" required>
+            </div>
+            <div>
+                <label for="bulan-bayar">Bulan</label>
+                <input type="text" name="bln_bayar" id="bulan-bayar" readonly required>
+            </div>
+            <div>
+                <label for="tanggal-bayar">Tanggal Bayar</label>
+                <input type="datetime-local" name="tgl_bayar" id="tanggal-bayar" required>
+            </div>
+            <div>
+                <label for="metode-pembayaran">Metode Pembayaran</label>
+                <select name="id_metode_pembayaran" id="metode-pembayaran" required>
+                    <option value="" selected disabled>Pilih metode pembayaran</option>
+                </select>
+            </div>
             
             <div id="nama-pengirim-group">
                 <label for="nama-pengirim">Nama Pengirim</label>
                 <input type="text" name="nama_pengirim" id="nama-pengirim">
-                <br>
             </div>
 
             <div id="nama-bank-pengirim-group">
                 <label for="nama-bank-pengirim">Nama Bank Pengirim</label>
                 <input type="text" name="nama_bank_pengirim" id="nama-bank-pengirim">
-                <br>
             </div>
 
             <div id="bukti-pembayaran-group">
@@ -200,7 +199,6 @@
                 <figure>
                     <img src="" id="preview-bukti-pembayaran" alt="Bukti Pembayaran">
                 </figure>
-                <br>
             </div>
 
             <div id="status-keterangan-group">
@@ -211,15 +209,15 @@
                     <option value="pending">Pending</option>
                     <option value="failed">Failed</option>
                 </select>
-
+                <br>
                 <label for="keterangan">Keterangan</label>
-                <input type="text" name="keterangan" id="keterangan">
+                <input class="input-ket" type="text" name="keterangan" id="keterangan">
                 <br>
             </div>
 
             <div style="display: flex; justify-content: space-between">
-                <input type="button" id="batal-bayar" value="Batal">
-                <input type="submit" value="Simpan">
+                <input class="hapus" type="button" id="batal-bayar" value="Batal">
+                <input class="tombolhijau" type="submit" value="Simpan">
             </div>
         </form> 
     </div>
@@ -364,7 +362,7 @@
         xhr.onload = () => {
             const response = JSON.parse(xhr.responseText);
             if (response.status === 'success') {
-                document.getElementById('tanggal-bayar').value = response.data.tgl_bayar.replace(' ', 'T').substring(0, 16);
+                document.getElementById('tanggal-bayar').value = response.data.tgl_bayar.substring(0, 11) + '(' + response.data.tgl_bayar.substring(11)  +')';
                 document.getElementById('metode-pembayaran').value = response.data.id_metode_pembayaran;
                 if(response.data.id_metode_pembayaran !== '4') {
                     document.getElementById('nama-pengirim').value = response.data.nama_pengirim;
