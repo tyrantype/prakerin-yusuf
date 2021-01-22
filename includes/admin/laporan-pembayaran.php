@@ -123,7 +123,8 @@
 
         document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('id-spp').addEventListener('change', (event) => {
-                drawChart();
+                drawChart('nomor');
+                drawChart('uang');
             });
 
             getSPP();
