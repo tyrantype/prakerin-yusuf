@@ -18,6 +18,18 @@
         <br/><br/>
         <div id="scrolltable" style="">        
             <!-- Table menampilkan Data Transaksi -->
+            <?php
+                $total_pembayaran = 0;
+                if (isset($_POST['tampil'])) {
+                    $date1 = $_POST['tgl_awal'];
+                    $date2 = $_POST['tgl_akhir'];
+                    $data = $admin->getTotalPembayaran($date1, $date2);
+                    foreach ($data as $row) :
+                    $total_pembayaran = $row['total_pembayaran'];
+                    endforeach;
+                }
+            ?>
+            <p>Jumlah Pemasukan : <span id="total-pembayaran"><?= $total_pembayaran ?></span></p>
             <table class="divTableLaporan" id="table_content">
                 <tr class="divTableRowHead">
                     <th class="divTableHead">No.</th>
@@ -93,7 +105,11 @@
     </div>
 
     <figure class="highcharts-figure">
-        <div id="container"></div>
+        <div id="container-nomor"></div>
+    </figure>
+
+    <figure class="highcharts-figure">
+        <div id="container-uang"></div>
     </figure>
 
     <script src="libraries/highcharts/highcharts.js"></script>
@@ -102,7 +118,8 @@
     <script src="libraries/highcharts/modules/accessibility.js"></script>
     <script defer>
         let dataChart = [];
-        let chart = null;
+        let chartNomor = null;
+        let chartUang = null;
 
         document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('id-spp').addEventListener('change', (event) => {
@@ -124,16 +141,17 @@
                     option.textContent = v.tahun;
                     select.appendChild(option);
                 });
-                drawChart();
+                drawChart('nomor');
+                drawChart('uang');
             };
             xhr.send();
         }
 
         
 
-        function drawChart() {
+        function drawChart(type) {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'api/get/?q=chart&category=jurusan&id_spp=' + document.getElementById('id-spp').value);
+            xhr.open('GET', `api/get/?q=chart&type=${type}&id_spp=` + document.getElementById('id-spp').value);
             xhr.onload = () => {
                 const response = JSON.parse(xhr.responseText);
                 let tkj = {
@@ -157,20 +175,29 @@
                 };
 
                 dataChart = [tkj, tkr, titl, tpm];
-
-                if(chart === null) {
-                    chart = Highcharts.chart('container', {
+                
+                let chart = type === 'nomor' ? chartNomor : chartUang;
+                let chartTitle = type === 'nomor' ? 'Jumlah Transaksi' : 'Jumlah Pemasukan'
+                if(chartNomor === null) {
+                    chart = Highcharts.chart(type === 'nomor' ? 'container-nomor' : 'container-uang', {
                         series: dataChart,
+                        xAxis: {
+                            labels: {
+                                formatter() {
+                                return response.data[this.pos].bulan.substring(0, 3);
+                                }
+                            }
+                        },
                         chart: {
                             type: 'column'
                         },
                         title: {
-                            text: 'Data Pembayaran SPP Tahun ' + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
+                            text: `${chartTitle} SPP Tahun ` + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
                         },
                         yAxis: {
                             allowDecimals: false,
                             title: {
-                                text: 'Units'
+                                text: chartTitle
                             }
                         },
                     });

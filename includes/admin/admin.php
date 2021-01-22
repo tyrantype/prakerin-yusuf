@@ -163,7 +163,16 @@
             WHERE p.tgl_bayar BETWEEN '$date1' and '$date2'
             ORDER BY p.id_pembayaran");
             return $stmt;
-        }    
+        }  
+        
+        public function getTotalPembayaran($date1, $date2) {
+            $stmt = mysqli_query($this->konek, "
+            SELECT SUM(s.nominal) total_pembayaran FROM tb_pembayaran p
+            INNER JOIN tb_spp s ON s.id_spp = p.id_spp
+            WHERE p.tgl_bayar BETWEEN '$date1' and '$date2'
+            ");
+            return $stmt;
+        }
 
         public function getNumberOfAllRecords() {
             $stmt = mysqli_query($this->konek, "SELECT COUNT(*) FROM tb_siswa");
