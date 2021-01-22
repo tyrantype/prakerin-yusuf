@@ -35,38 +35,34 @@
 
 <div class="modal-dialog" id="modalBayar">
     <div class="modal-content">
-        <div class="modal-header">
-            <h3>Bayar SPP Bulan <span id="bayarSPPBulan"></span></h3>
-        </div>
-        <div class="modal-body">
-            <form method="POST" id="bayarSPPForm">
+        <h3>Bayar SPP Bulan <span id="bayarSPPBulan"></span></h3>
+        <form class="form-modal" method="POST" id="bayarSPPForm">
+            <div>
                 <label for="metodePembayaran">Metode Pembayaran</label>
                 <select name="id_metode_pembayaran" id="metodePembayaran" required></select>
-                <br>
-
+            </div>
+            <div>
                 <label for="namaPengirim">Nama Pengirim</label>
                 <input type="text" name="nama_pengirim" id="namaPengirim" required>
-                <br>
-
+            </div>
+            <div>
                 <label for="namaBankPengirim">Nama Bank Pengirim</label>
                 <input type="text" name="nama_bank_pengirim" id="namaBankPengirim" required>
-                <br>
-
+            </div>
+            <div style="margin-top:10px">
                 <label for="buktiPembayaran">Bukti Pembayaran</label>
                 <input type="file" name="fileToUpload" id="buktiPembayaran" accept="image/*" required>
-                <br>
+            </div>
+            <figure>
+                <img src="" id="previewBuktiPembayaran" alt="Bukti Pembayaran">
+            </figure>
+            <br>
 
-                <figure>
-                    <img src="" id="previewBuktiPembayaran" alt="Bukti Pembayaran">
-                </figure>
-                <br>
-
-                <div class="buttonsContainer">
-                    <button type="button" id="batalBayarDialog">Batal</button>
-                    <input type="submit" value="Bayar">
-                </div>
-            </form>
-        </div>
+            <div class="buttonsContainer">
+                <input class="hapus" type="button" id="batalBayarDialog" value="Batal"></input>
+                <input class="tombolhijau" type="submit" value="Bayar">
+            </div>
+        </form>
     </div>
 </div>
 

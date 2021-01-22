@@ -496,7 +496,10 @@ select:hover{
     /* background-color: wheat; */
 }
 
-.form-modal input[type=text]#keterangan{
+.form-modal input[type=text]#keterangan,
+.form-modal input[type=text]#namaPengirim,
+.form-modal input[type=text]#namaBankPengirim
+    {
     border: 2px solid rgb(207, 207, 207);
     border-radius: 4px;
     box-sizing: border-box;

@@ -62,6 +62,22 @@ table#profile  th {
     cursor: pointer;
     color: white;
 }
+.btn-batal[type=button]{
+    width: 83px;
+    border: hidden;
+    border-bottom: 0.7px solid rgb(236, 56, 56);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: rgb(219, 48, 48);
+    text-decoration: none;
+    font-size: 17px;
+    background-color:rgba(255, 255, 255, 0);
+}
+.btn-batal:hover{
+    background-color:rgb(219, 48, 48);
+    color: white;
+    cursor: pointer;
+}
 
 .modal-dialog {
     display: none;

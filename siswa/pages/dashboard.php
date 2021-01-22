@@ -1,1 +1,8 @@
-<h1>Welcome Hero!</h1>
+
+<!-- v2 -->
+<div id="kontainer-konten">
+
+    <div id="konten">
+        <h1>Selamat Datang</h1>
+    </div>
+</div>
