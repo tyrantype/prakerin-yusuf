@@ -1,7 +1,7 @@
 
 <h2>Laporan Pembayaran</h2>
 
-<div id="kontainer-konten">
+<div id="kontainer-konten" style="margin-bottom: 0; min-height: 0;">
     <div id="scrolltable-wrap" >
         <div style="display: inline-block;">
             <form method="POST">
@@ -70,6 +70,124 @@
             </table>
         </div>
     </div>
+</div>
+
+<div style="background-color: white;">
+    <style>
+        #container {
+            height: 400px;
+        }
+
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+    </style>
+
+    <div>
+        <p><strong>Chart</strong></p>
+        <label for="id-spp">Pilih tahun</label>
+        <select id="id-spp"></select>
+    </div>
+
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
+
+    <script src="libraries/highcharts/highcharts.js"></script>
+    <script src="libraries/highcharts/modules/data.js"></script>
+    <script src="libraries/highcharts/modules/exporting.js"></script>
+    <script src="libraries/highcharts/modules/accessibility.js"></script>
+    <script defer>
+        let dataChart = [];
+        let chart = null;
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('id-spp').addEventListener('change', (event) => {
+                drawChart();
+            });
+
+            getSPP();
+        });
+
+        function getSPP() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'api/get/?q=spp');
+            xhr.onload = () => {
+                const select = document.getElementById('id-spp');
+                const response = JSON.parse(xhr.responseText);
+                response.data.forEach(v => {
+                    let option = document.createElement('option');
+                    option.value = v.id_spp;
+                    option.textContent = v.tahun;
+                    select.appendChild(option);
+                });
+                drawChart();
+            };
+            xhr.send();
+        }
+
+        
+
+        function drawChart() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'api/get/?q=chart&category=jurusan&id_spp=' + document.getElementById('id-spp').value);
+            xhr.onload = () => {
+                const response = JSON.parse(xhr.responseText);
+                let tkj = {
+                    name: 'TKJ',
+                    data: response.data.map(v => Number(v.TKJ))
+                };
+
+                let tkr = {
+                    name: 'TKR',
+                    data: response.data.map(v => Number(v.TKR))
+                };
+
+                let titl = {
+                    name: 'TITL',
+                    data: response.data.map(v => Number(v.TITL))
+                };
+
+                let tpm = {
+                    name: 'TPM',
+                    data: response.data.map(v => Number(v.TPM))
+                };
+
+                dataChart = [tkj, tkr, titl, tpm];
+
+                if(chart === null) {
+                    chart = Highcharts.chart('container', {
+                        series: dataChart,
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: 'Data Pembayaran SPP Tahun ' + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
+                        },
+                        yAxis: {
+                            allowDecimals: false,
+                            title: {
+                                text: 'Units'
+                            }
+                        },
+                    });
+                } else {
+                    for(i = 0; i < dataChart.length; i++) {
+                        chart.series[i].update({
+                            data: dataChart[i].data
+                        }, true);
+                    }
+                    chart.setTitle({
+                        text: 'Data Pembayaran SPP Tahun ' + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
+                    });
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </div>
 
 <?php
