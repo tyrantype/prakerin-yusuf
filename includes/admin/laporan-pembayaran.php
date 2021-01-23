@@ -84,138 +84,131 @@
     </div>
 </div>
 
-<div style="background-color: white;">
-    <style>
-        #container {
-            height: 400px;
-        }
+<div style="margin-top: -50px; min-height: 0;">
+</div>
 
-        .highcharts-figure,
-        .highcharts-data-table table {
-            min-width: 310px;
-            max-width: 800px;
-            margin: 1em auto;
-        }
-    </style>
+<h2>Chart</h2>
+<div id="container">
+    <div id="scrolltable-wrap" class="clearmargin">
+        <div class="select-chart"> 
+            <label for="id-spp">Tahun</label>
+            <select class="inputdate" id="id-spp"></select>
+        </div>
 
-    <div>
-        <p><strong>Chart</strong></p>
-        <label for="id-spp">Pilih tahun</label>
-        <select id="id-spp"></select>
-    </div>
+        <figure class="highcharts-figure shadow">
+            <div id="container-nomor"></div>
+        </figure>
+        
+        <figure class="highcharts-figure shadow">
+            <div id="container-uang"></div>
+        </figure>
 
-    <figure class="highcharts-figure">
-        <div id="container-nomor"></div>
-    </figure>
+        <script src="libraries/highcharts/highcharts.js"></script>
+        <script src="libraries/highcharts/modules/data.js"></script>
+        <script src="libraries/highcharts/modules/exporting.js"></script>
+        <script src="libraries/highcharts/modules/accessibility.js"></script>
+        <script defer>
+            let dataChart = [];
+            let chartNomor = null;
+            let chartUang = null;
 
-    <figure class="highcharts-figure">
-        <div id="container-uang"></div>
-    </figure>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                document.getElementById('id-spp').addEventListener('change', (event) => {
+                    drawChart('nomor');
+                    drawChart('uang');
+                });
 
-    <script src="libraries/highcharts/highcharts.js"></script>
-    <script src="libraries/highcharts/modules/data.js"></script>
-    <script src="libraries/highcharts/modules/exporting.js"></script>
-    <script src="libraries/highcharts/modules/accessibility.js"></script>
-    <script defer>
-        let dataChart = [];
-        let chartNomor = null;
-        let chartUang = null;
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.getElementById('id-spp').addEventListener('change', (event) => {
-                drawChart('nomor');
-                drawChart('uang');
+                getSPP();
             });
 
-            getSPP();
-        });
-
-        function getSPP() {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'api/get/?q=spp');
-            xhr.onload = () => {
-                const select = document.getElementById('id-spp');
-                const response = JSON.parse(xhr.responseText);
-                response.data.forEach(v => {
-                    let option = document.createElement('option');
-                    option.value = v.id_spp;
-                    option.textContent = v.tahun;
-                    select.appendChild(option);
-                });
-                drawChart('nomor');
-                drawChart('uang');
-            };
-            xhr.send();
-        }
-
-        
-
-        function drawChart(type) {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `api/get/?q=chart&type=${type}&id_spp=` + document.getElementById('id-spp').value);
-            xhr.onload = () => {
-                const response = JSON.parse(xhr.responseText);
-                let tkj = {
-                    name: 'TKJ',
-                    data: response.data.map(v => Number(v.TKJ))
+            function getSPP() {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'api/get/?q=spp');
+                xhr.onload = () => {
+                    const select = document.getElementById('id-spp');
+                    const response = JSON.parse(xhr.responseText);
+                    response.data.forEach(v => {
+                        let option = document.createElement('option');
+                        option.value = v.id_spp;
+                        option.textContent = v.tahun;
+                        select.appendChild(option);
+                    });
+                    drawChart('nomor');
+                    drawChart('uang');
                 };
+                xhr.send();
+            }
 
-                let tkr = {
-                    name: 'TKR',
-                    data: response.data.map(v => Number(v.TKR))
-                };
+            
 
-                let titl = {
-                    name: 'TITL',
-                    data: response.data.map(v => Number(v.TITL))
-                };
+            function drawChart(type) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', `api/get/?q=chart&type=${type}&id_spp=` + document.getElementById('id-spp').value);
+                xhr.onload = () => {
+                    const response = JSON.parse(xhr.responseText);
+                    let tkj = {
+                        name: 'TKJ',
+                        data: response.data.map(v => Number(v.TKJ))
+                    };
 
-                let tpm = {
-                    name: 'TPM',
-                    data: response.data.map(v => Number(v.TPM))
-                };
+                    let tkr = {
+                        name: 'TKR',
+                        data: response.data.map(v => Number(v.TKR))
+                    };
 
-                dataChart = [tkj, tkr, titl, tpm];
-                
-                let chart = type === 'nomor' ? chartNomor : chartUang;
-                let chartTitle = type === 'nomor' ? 'Jumlah Transaksi' : 'Jumlah Pemasukan'
-                if(chartNomor === null) {
-                    chart = Highcharts.chart(type === 'nomor' ? 'container-nomor' : 'container-uang', {
-                        series: dataChart,
-                        xAxis: {
-                            labels: {
-                                formatter() {
-                                return response.data[this.pos].bulan.substring(0, 3);
+                    let titl = {
+                        name: 'TITL',
+                        data: response.data.map(v => Number(v.TITL))
+                    };
+
+                    let tpm = {
+                        name: 'TPM',
+                        data: response.data.map(v => Number(v.TPM))
+                    };
+
+                    dataChart = [tkj, tkr, titl, tpm];
+                    
+                    let chart = type === 'nomor' ? chartNomor : chartUang;
+                    let chartTitle = type === 'nomor' ? 'Jumlah Transaksi' : 'Jumlah Pemasukan'
+                    if(chartNomor === null) {
+                        chart = Highcharts.chart(type === 'nomor' ? 'container-nomor' : 'container-uang', {
+                            series: dataChart,
+                            xAxis: {
+                                labels: {
+                                    formatter() {
+                                    return response.data[this.pos].bulan.substring(0, 3);
+                                    }
                                 }
-                            }
-                        },
-                        chart: {
-                            type: 'column'
-                        },
-                        title: {
-                            text: `${chartTitle} SPP Tahun ` + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
-                        },
-                        yAxis: {
-                            allowDecimals: false,
+                            },
+                            chart: {
+                                type: 'column'
+                            },
                             title: {
-                                text: chartTitle
-                            }
-                        },
-                    });
-                } else {
-                    for(i = 0; i < dataChart.length; i++) {
-                        chart.series[i].update({
-                            data: dataChart[i].data
-                        }, true);
+                                text: `${chartTitle} SPP Tahun ` + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
+                            },
+                            yAxis: {
+                                allowDecimals: false,
+                                title: {
+                                    text: chartTitle
+                                }
+                            },
+                        });
+                    } else {
+                        for(i = 0; i < dataChart.length; i++) {
+                            chart.series[i].update({
+                                data: dataChart[i].data
+                            }, true);
+                        }
+                        chart.setTitle({
+                            text: 'Data Pembayaran SPP Tahun ' + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
+                        });
                     }
-                    chart.setTitle({
-                        text: 'Data Pembayaran SPP Tahun ' + document.getElementById('id-spp').options[document.getElementById('id-spp').selectedIndex].textContent + ' Berdasarkan Jurusan'
-                    });
-                }
-            };
-            xhr.send();
-        }
-    </script>
+                };
+                xhr.send();
+            }
+        </script>
+    
+    </div>
 </div>
 
 <?php

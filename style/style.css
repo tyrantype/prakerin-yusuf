@@ -365,7 +365,32 @@ select:hover{
     text-align: center;
   }
 
-
+/* chart */
+#container {
+    height: 1000px;
+    width: 100%;
+    margin-bottom: -340px;
+    display: flex;
+    justify-content: center;
+}
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+.clearmargin{
+    width: 800px;
+}
+.shadow{
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+.select-chart{
+    display : inline-block; 
+}
+.select-chart select{
+    width : 100px; 
+}
 
 /* Footer -----------------------------------*/
 .clearfooter {
@@ -457,7 +482,19 @@ select:hover{
     .pagination{
         position: absolute;
     }
+    .highcharts-figure,
+    .highcharts-data-table table {
+        width: 95%;
+    }
     
+    #container {
+        /* height: 400px; */
+        width: 95%;
+        margin-bottom: -100px;
+    }
+    .select-chart{
+        margin-left: 10px;
+    }
 }
 
 .modal-dialog {
