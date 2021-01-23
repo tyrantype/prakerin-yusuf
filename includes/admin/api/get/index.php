@@ -22,6 +22,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -30,6 +31,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -38,6 +40,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -46,6 +49,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -57,6 +61,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -65,6 +70,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -73,6 +79,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -81,6 +88,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -92,6 +100,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -100,6 +109,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -108,6 +118,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -116,6 +127,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -127,6 +139,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -135,6 +148,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -143,6 +157,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -151,6 +166,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -162,6 +178,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -170,6 +187,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -178,6 +196,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -186,6 +205,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -197,6 +217,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -205,6 +226,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -213,6 +235,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -221,6 +244,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -232,6 +256,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -240,6 +265,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -248,6 +274,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -256,6 +283,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -267,6 +295,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -275,6 +304,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -283,6 +313,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -291,6 +322,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -302,6 +334,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -310,6 +343,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -318,6 +352,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -326,6 +361,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -337,6 +373,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -345,6 +382,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -353,6 +391,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -361,6 +400,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -372,6 +412,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -380,6 +421,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -388,6 +430,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -396,6 +439,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -407,6 +451,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -415,6 +460,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -423,6 +469,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -431,6 +478,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn 
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 ";
@@ -444,6 +492,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -452,6 +501,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -460,6 +510,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -468,6 +519,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Januari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -479,6 +531,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -487,6 +540,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -495,6 +549,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -503,6 +558,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Februari' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -514,6 +570,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -522,6 +579,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -530,6 +588,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -538,6 +597,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Maret' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -549,6 +609,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -557,6 +618,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -565,6 +627,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -573,6 +636,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'April' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -584,6 +648,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -592,6 +657,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -600,6 +666,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -608,6 +675,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Mei' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -619,6 +687,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -627,6 +696,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -635,6 +705,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -643,6 +714,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juni' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -654,6 +726,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -662,6 +735,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -670,6 +744,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -678,6 +753,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Juli' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -689,6 +765,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -697,6 +774,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -705,6 +783,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -713,6 +792,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Agustus' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -724,6 +804,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -732,6 +813,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -740,6 +822,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -748,6 +831,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'September' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -759,6 +843,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -767,6 +852,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -775,6 +861,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -783,6 +870,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Oktober' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -794,6 +882,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -802,6 +891,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -810,6 +900,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -818,6 +909,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'November' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'
                 UNION
@@ -829,6 +921,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKJ'
                     ) 'TKJ',
                     (
@@ -837,6 +930,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TKR'
                     ) 'TKR',
                     (
@@ -845,6 +939,7 @@ if (isset($_GET['q'])) {
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
                         AND tb_pembayaran.bln_bayar = 'Desember' 
+                        AND tb_pembayaran.status = 'success'
                         AND tb_siswa.kelas = 'TITL'
                     ) 'TITL',
                     (
@@ -852,6 +947,7 @@ if (isset($_GET['q'])) {
                         FROM tb_pembayaran 
                         JOIN tb_siswa ON tb_siswa.nisn = tb_pembayaran.nisn JOIN tb_spp ON tb_spp.id_spp = tb_pembayaran.id_spp
                         WHERE tb_pembayaran.id_spp = $_GET[id_spp]  
+                        AND tb_pembayaran.status = 'success'
                         AND tb_pembayaran.bln_bayar = 'Desember' 
                         AND tb_siswa.kelas = 'TPM'
                     ) 'TPM'

@@ -161,6 +161,7 @@
             INNER JOIN tb_spp s ON s.id_spp = p.id_spp
             INNER JOIN tb_petugas t ON t.id_petugas = p.id_petugas
             WHERE p.tgl_bayar BETWEEN '$date1' and '$date2'
+            AND status = 'success'
             ORDER BY p.id_pembayaran");
             return $stmt;
         }  
@@ -169,7 +170,8 @@
             $stmt = mysqli_query($this->konek, "
             SELECT SUM(s.nominal) total_pembayaran FROM tb_pembayaran p
             INNER JOIN tb_spp s ON s.id_spp = p.id_spp
-            WHERE p.tgl_bayar BETWEEN '$date1' and '$date2'
+            WHERE p.tgl_bayar BETWEEN '$date1' and '$date2' 
+            AND status = 'success'
             ");
             return $stmt;
         }
