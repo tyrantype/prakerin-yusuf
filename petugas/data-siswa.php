@@ -19,7 +19,74 @@
             </form>
         </div>
         <br>
-        <div id="scrolltable" style="">
+
+        <?php
+        function is_selected_sort($sort_category, $sort_type) {
+            if (isset($_GET['sort-category']) && isset($_GET['sort-type'])) {
+                if ($_GET['sort-category'] === $sort_category && $_GET['sort-type'] === $sort_type) {
+                    return 'selected';
+                } else {
+                    '';
+                }
+            } else {
+                return '';
+            }
+        }
+
+        function get_sort_type($sort_category) {
+            if(isset($_GET['sort-category']) && isset($_GET['sort-type'])) {
+                if(($_GET['sort-category']) === $sort_category) {
+                    return $_GET['sort-type'] === 'asc' ? 'desc' : 'asc';
+                } else {
+                    return 'asc';
+                }
+            } else {
+                return 'asc';
+            }
+        }
+
+        function get_sort_symbol($column_name, $sort_category) {
+            if(isset($_GET['sort-category']) && isset($_GET['sort-type'])) {
+                if(($_GET['sort-category']) === $sort_category) {
+                    return $_GET['sort-type'] === 'asc' ? "$column_name ☝️" : "$column_name 👇";
+                } else {
+                    return $column_name;
+                }
+            } else {
+                return $column_name;
+            }
+        }
+        ?>
+
+        <label for="sort-by">Sort by</label>
+        <select name="sort-by" id="sort-by">
+            <option value="" selected disabled>Sort By</option>
+            <option value="nisn#asc" <?= is_selected_sort('nisn', 'asc') ?> >NISN ASC</option>
+            <option value="nisn#desc" <?= is_selected_sort('nisn', 'desc') ?> >NISN DESC</option>
+            <option value="nis#asc" <?= is_selected_sort('nis', 'asc') ?> >NIS ASC</option>
+            <option value="nis#desc" <?= is_selected_sort('nis', 'desc') ?> >NIS DESC</option>
+            <option value="nama_lengkap#asc" <?= is_selected_sort('nama_lengkap', 'asc') ?> >Nama Lengkap ASC</option>
+            <option value="nama_lengkap#desc" <?= is_selected_sort('nama_lengkap', 'desc') ?> >Nama Lengkap DESC</option>
+            <option value="kelas#asc" <?= is_selected_sort('kelas', 'asc') ?> >Jurusan ASC</option>
+            <option value="kelas#desc" <?= is_selected_sort('kelas', 'desc') ?> >Jurusan DESC</option>
+            <option value="tanggal_lahir#asc" <?= is_selected_sort('tanggal_lahir', 'asc') ?> >Tanggal Lahir ASC</option>
+            <option value="tanggal_lahir#desc" <?= is_selected_sort('tanggal_lahir', 'desc') ?> >Tanggal Lahir DESC</option>
+            <option value="jenis_kelamin#asc" <?= is_selected_sort('jenis_kelamin', 'asc') ?> >Jenis Kelamin ASC</option>
+            <option value="jenis_kelamin#desc" <?= is_selected_sort('jenis_kelamin', 'desc') ?> >Jenis Kelamin DESC</option>
+        </select>
+        <script>
+            const sortSelect =  document.getElementById('sort-by');
+            if (sortSelect !== null) {
+                sortSelect.addEventListener('change', (event) => {
+                    const sortCategory = event.currentTarget.value.split('#')[0];
+                    const sortType = event.currentTarget.value.split('#')[1];
+                    location.href = `?p=siswa&sort-category=${sortCategory}&sort-type=${sortType}`;
+                });
+            }
+        </script>
+
+
+        <div id="scrolltable">
             <!-- Tabel Data Siswa Yang terdaftar -->
             <?php
                 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -32,12 +99,12 @@
                             echo "<div class='divTableBody'>";
                                 echo "<div class='divTableRowHead'>";
                                     echo "<div class='divTableHead'>No</div>";
-                                    echo "<div class='divTableHead'>NISN</div>";
-                                    echo "<div class='divTableHead'>NIS</div>";
-                                    echo "<div class='divTableHead'>Nama Lengkap</div>";
-                                    echo "<div class='divTableHead'>Jurusan</div>";
-                                    echo "<div class='divTableHead'>Tanggal Lahir</div>";
-                                    echo "<div class='divTableHead'>Jenis Kelamin</div>";
+                                    echo "<div class='divTableHead'><a href='?p=siswa&sort-category=nisn&sort-type=" . get_sort_type('nisn') . "'>" .get_sort_symbol('NISN', 'nisn') . "</a></div>";
+                                    echo "<div class='divTableHead'><a href='?p=siswa&sort-category=nis&sort-type=" . get_sort_type('nis') . "'>" .get_sort_symbol('NIS', 'nis') . "</a></div>";
+                                    echo "<div class='divTableHead'><a href='?p=siswa&sort-category=nama_lengkap&sort-type=" . get_sort_type('nama_lengkap') . "'>" .get_sort_symbol('Nama Lengkap', 'nama_lengkap') . "</a></div>";
+                                    echo "<div class='divTableHead'><a href='?p=siswa&sort-category=kelas&sort-type=" . get_sort_type('kelas') . "'>" . get_sort_symbol('Jurusan', 'kelas') . "</a></div>";
+                                    echo "<div class='divTableHead'><a href='?p=siswa&sort-category=tanggal_lahir&sort-type=" . get_sort_type('tanggal_lahir') . "'>" .get_sort_symbol('Tanggal Lahir', 'tanggal_lahir') . "</a></div>";
+                                    echo "<div class='divTableHead'><a href='?p=siswa&sort-category=jenis_kelamin&sort-type=" . get_sort_type('jenis_kelamin') . "'>" .get_sort_symbol('Jenis Kelamin', 'jenis_kelamin') . "</a></div>";
                                     echo "<div class='divTableHead'>Nomor HP</div>";
                                     
                                 echo "</div>";
@@ -69,14 +136,14 @@
                     
                     echo "
                     <div class='divTable'>
-                        <div <div class='divTableRowHead'>
+                        <div class='divTableRowHead'>
                             <div class='divTableHead'>No</div>
-                            <div class='divTableHead'>NISN</div>
-                            <div class='divTableHead'>NIS</div>
-                            <div class='divTableHead'>Nama Lengkap</div>
-                            <div class='divTableHead'>Jurusan</div>
-                            <div class='divTableHead'>Tanggal Lahir</div>
-                            <div class='divTableHead'>Jenis Kelamin</div>
+                            <div class='divTableHead'><a href='?p=siswa&sort-category=nisn&sort-type=" . get_sort_type('nisn') . "'>" .get_sort_symbol('NISN', 'nisn') . "</a></div>
+                            <div class='divTableHead'><a href='?p=siswa&sort-category=nis&sort-type=" . get_sort_type('nis') . "'>" .get_sort_symbol('NIS', 'nis') . "</a></div>
+                            <div class='divTableHead'><a href='?p=siswa&sort-category=nama_lengkap&sort-type=" . get_sort_type('nama_lengkap') . "'>" .get_sort_symbol('Nama Lengkap', 'nama_lengkap') . "</a></div>
+                            <div class='divTableHead'><a href='?p=siswa&sort-category=kelas&sort-type=" . get_sort_type('kelas') . "'>" . get_sort_symbol('Jurusan', 'kelas') . "</a></div>
+                            <div class='divTableHead'><a href='?p=siswa&sort-category=tanggal_lahir&sort-type=" . get_sort_type('tanggal_lahir') . "'>" .get_sort_symbol('Tanggal Lahir', 'tanggal_lahir') . "</a></div>
+                            <div class='divTableHead'><a href='?p=siswa&sort-category=jenis_kelamin&sort-type=" . get_sort_type('jenis_kelamin') . "'>" .get_sort_symbol('Jenis Kelamin', 'jenis_kelamin') . "</a></div>
                             <div class='divTableHead'>Nomor HP</div>
                         </div>
                     ";
@@ -86,13 +153,20 @@
                         } else {
                             $currentPage = 1;
                         }
-                        $rows = $petugas->getSiswaDataNth($currentPage);
+                        
+                        if (isset($_GET['sort-category']) && isset($_GET['sort-type'])) {
+                            $rows = $petugas->getSiswaDataNth($currentPage, $_GET['sort-category'], $_GET['sort-type']);
+                        } else {
+                            $rows = $petugas->getSiswaDataNth($currentPage);
+                        }
+
+                        $num = 0;
                         foreach($rows as $row) :
                         $nomor_hp = empty($row['nomor_hp']) ? '-' : $row['nomor_hp'];
                         $email = empty($row['email']) ? '-' : $row['email'];
                         echo "
                             <div class='divTableRow'>
-                                <div class='divTableCell'>".$row['row_num']."</div>
+                                <div class='divTableCell'>".++$num."</div>
                                 <div class='divTableCell'>".$row['nisn']."</div>
                                 <div class='divTableCell'>".$row['nis']."</div>
                                 <div class='divTableCell'>".$row['nama_lengkap']."</div>

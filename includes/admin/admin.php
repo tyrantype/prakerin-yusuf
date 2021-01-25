@@ -181,13 +181,18 @@
             return $stmt;
         }
 
-        public function getSiswaDataNth($page) {
+        public function getSiswaDataNth($page, $sort_category = null, $sort_type = null) {
             $start = ($page * 10) - 9;
-            $stmt = mysqli_query($this->konek, "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY nisn) row_num, tb_siswa.*, desa.nama desa, kecamatan.nama kecamatan, kabupaten.nama kabupaten, provinsi.nama provinsi FROM tb_siswa 
+            $sql = "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY nisn) row_num, tb_siswa.*, desa.nama desa, kecamatan.nama kecamatan, kabupaten.nama kabupaten, provinsi.nama provinsi FROM tb_siswa 
             INNER JOIN wilayah_administratif_indonesia.desa ON desa.id = tb_siswa.id_desa
             INNER JOIN wilayah_administratif_indonesia.kecamatan ON kecamatan.id = desa.id_kecamatan
             INNER JOIN wilayah_administratif_indonesia.kabupaten ON kabupaten.id = kecamatan.id_kabupaten
-            INNER JOIN wilayah_administratif_indonesia.provinsi ON provinsi.id = kabupaten.id_provinsi) tb_siswa_ordered WHERE row_num >= $start LIMIT 10");
+            INNER JOIN wilayah_administratif_indonesia.provinsi ON provinsi.id = kabupaten.id_provinsi) tb_siswa_ordered WHERE row_num >= $start ";
+            if ($sort_category !== null && $sort_type !== null) {
+                $sql .= " ORDER BY $sort_category $sort_type";
+            }
+            $sql .= ' LIMIT 10';
+            $stmt = mysqli_query($this->konek, $sql);
             return $stmt;
         }
 
